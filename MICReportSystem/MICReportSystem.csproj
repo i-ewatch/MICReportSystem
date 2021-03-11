@@ -267,6 +267,12 @@
     <Compile Include="Protocols\AbsProtocol.cs" />
     <Compile Include="Protocols\BAW_4CProtocol.cs" />
     <Compile Include="Protocols\ThreePhaseElectricMeterData.cs" />
+    <Compile Include="Views\AnalysisXtraReport.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Views\AnalysisXtraReport.Designer.cs">
+      <DependentUpon>AnalysisXtraReport.cs</DependentUpon>
+    </Compile>
     <Compile Include="Views\ChartUserControl.cs">
       <SubType>UserControl</SubType>
     </Compile>
@@ -300,12 +306,6 @@
     <Compile Include="Views\SettingUserControl.Designer.cs">
       <DependentUpon>SettingUserControl.cs</DependentUpon>
     </Compile>
-    <Compile Include="Views\BillingXtraReport.cs">
-      <SubType>Component</SubType>
-    </Compile>
-    <Compile Include="Views\BillingXtraReport.Designer.cs">
-      <DependentUpon>BillingXtraReport.cs</DependentUpon>
-    </Compile>
     <Compile Include="Views\XtraReportUserControl.cs">
       <SubType>UserControl</SubType>
     </Compile>
@@ -328,6 +328,9 @@
       <AutoGen>True</AutoGen>
       <DependentUpon>Resources.resx</DependentUpon>
     </Compile>
+    <EmbeddedResource Include="Views\AnalysisXtraReport.resx">
+      <DependentUpon>AnalysisXtraReport.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Views\ChartUserControl.resx">
       <DependentUpon>ChartUserControl.cs</DependentUpon>
     </EmbeddedResource>
@@ -342,9 +345,6 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Views\SettingUserControl.resx">
       <DependentUpon>SettingUserControl.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Views\BillingXtraReport.resx">
-      <DependentUpon>BillingXtraReport.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Views\XtraReportUserControl.resx">
       <DependentUpon>XtraReportUserControl.cs</DependentUpon>

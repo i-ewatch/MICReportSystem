@@ -35,9 +35,10 @@ namespace MICReportSystem.Views
                 }
 
                 XtraReport xtraReport = new XtraReport();
-                BillingXtraReport billingXtraReport = new BillingXtraReport(MysqlMethod, ttime);
-                billingXtraReport.CreateDocument();
-                xtraReport.Pages.AddRange(billingXtraReport.Pages);
+                AnalysisXtraReport analysisXtraReport = new AnalysisXtraReport();
+                analysisXtraReport.create_XtraReport(MysqlMethod, ttime);
+                analysisXtraReport.CreateDocument();
+                xtraReport.Pages.AddRange(analysisXtraReport.Pages);
                 documentViewer1.DocumentSource = xtraReport;
             }
             else
@@ -69,13 +70,13 @@ namespace MICReportSystem.Views
                         ttime = DateTime.Now.ToString("yyyy/MM/") + $"0{XtraReportSetting.Day} 00:00:00";
                     }
 
-                    XtraReport xtraReport = new XtraReport();
-                    BillingXtraReport billingXtraReport = new BillingXtraReport(MysqlMethod, ttime);
-                    billingXtraReport.CreateDocument();
+                    AnalysisXtraReport analysisXtraReport = new AnalysisXtraReport();
+                    analysisXtraReport.create_XtraReport(MysqlMethod, ttime);
+                    analysisXtraReport.CreateDocument();
                     if (Directory.Exists($"{XtraReportSetting.Path}"))
                     {
-                        string path = XtraReportSetting.Path + $"\\{DateTime.Now.ToString("yyyy-MM")}-產量紀錄表(一、二廠).docx";
-                        billingXtraReport.ExportToDocx(path);
+                        string path = XtraReportSetting.Path + $"\\{DateTime.Now.ToString("yyyy-MM")}-產量紀錄表(一、二廠).docx";                     
+                        analysisXtraReport.ExportToDocx(path);
                     }
                     ExportFlag = true;
                 }

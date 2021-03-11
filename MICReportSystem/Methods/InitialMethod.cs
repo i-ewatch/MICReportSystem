@@ -138,7 +138,6 @@ namespace MICReportSystem.Methods
                     {
                         AutoExport = false,
                         Path = "儲存路徑",
-                        LogoPath = "Logo路徑",
                         Day = 1
                     };
                     setting = Setting;

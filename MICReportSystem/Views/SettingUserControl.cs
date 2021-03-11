@@ -32,7 +32,6 @@ namespace MICReportSystem.Views
             AutotoggleSwitch.IsOn = XtraReportSetting.AutoExport;//自動匯出開關
             PathtextEdit.Text = XtraReportSetting.Path;//儲存路徑
             DaycomboBoxEdit.Text = XtraReportSetting.Day.ToString() ;//匯出時間
-            LogotextEdit.Text = XtraReportSetting.LogoPath;//Logo路徑
 
             int Index = 0;
             foreach (var ReportConfigitem in ReportConfigs)
@@ -70,13 +69,11 @@ namespace MICReportSystem.Views
             XtraReportSetting.AutoExport = AutotoggleSwitch.IsOn;
             XtraReportSetting.Path = PathtextEdit.Text;
             XtraReportSetting.Day = Convert.ToInt32(DaycomboBoxEdit.Text);
-            XtraReportSetting.LogoPath = LogotextEdit.Text;
             InitialMethod.Save_XtraReportSetting(XtraReportSetting);
             foreach (var item in exportElectricSettingUserControls)
             {
                 item.Inserter_ReportConfig();
-            }
-            Form1.Change_Logo(LogotextEdit.Text);
+            }          
             Form1.accordionControl1.Enabled = true;
             Form1.FlyoutFlag = false;
             Form1.flyout.Close();
@@ -96,17 +93,6 @@ namespace MICReportSystem.Views
                 if (SaveFileDialog.Description != null)
                 {
                     PathtextEdit.Text = Path.GetFullPath(SaveFileDialog.SelectedPath);
-                }
-            }
-        }
-
-        private void LogoPathsimpleButton_Click(object sender, EventArgs e)
-        {
-            if (LogoFileDialog.ShowDialog() == DialogResult.OK)
-            {
-                if (LogoFileDialog.OpenFile() != null)
-                {
-                    LogotextEdit.Text = Path.GetFullPath(LogoFileDialog.FileName);
                 }
             }
         }

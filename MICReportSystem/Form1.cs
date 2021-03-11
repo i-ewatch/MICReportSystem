@@ -26,6 +26,10 @@ namespace MICReportSystem
     public partial class Form1 : DevExpress.XtraBars.FluentDesignSystem.FluentDesignForm
     {
         /// <summary>
+        /// 初始路徑
+        /// </summary>
+        private string MyWorkPath { get; set; } = AppDomain.CurrentDomain.BaseDirectory;
+        /// <summary>
         /// 錯誤資訊
         /// </summary>
         private string ErrorStr { get; set; } = string.Empty;
@@ -177,12 +181,7 @@ namespace MICReportSystem
             InitializeComponent();
             if (ErrorStr == "")
             {
-                #region 載入LOGO
-                if (XtraReportSetting != null)
-                {
-                    Change_Logo(XtraReportSetting.LogoPath);
-                }
-                #endregion
+                Change_Logo();//載入Logo
                 SettingbarButtonItem.ImageOptions.Image = imageCollection1.Images["technology"];//設定按鈕圖
                 #region 建立資料庫物件
                 MysqlMethod = new MysqlMethod(SystemSetting);
@@ -258,12 +257,13 @@ namespace MICReportSystem
         /// <summary>
         /// 更改Logo
         /// </summary>
-        /// <param name="LogoPath"></param>
-        public void Change_Logo(string LogoPath)
+        public void Change_Logo()
         {
-            if (File.Exists(LogoPath))
+            if (!Directory.Exists($"{MyWorkPath}\\Images"))
+                Directory.CreateDirectory($"{MyWorkPath}\\Images");
+            if (File.Exists($"{MyWorkPath}\\Images\\Logo.png"))
             {
-                LogopictureEdit.Image = Image.FromFile(LogoPath);
+                LogopictureEdit.Image = Image.FromFile($"{MyWorkPath}\\Images\\Logo.png");
             }
         }
         #endregion

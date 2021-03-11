@@ -30,8 +30,6 @@ namespace MICReportSystem.Views
         private void InitializeComponent()
         {
             this.groupControl1 = new DevExpress.XtraEditors.GroupControl();
-            this.LogoPathsimpleButton = new DevExpress.XtraEditors.SimpleButton();
-            this.labelControl4 = new DevExpress.XtraEditors.LabelControl();
             this.DaycomboBoxEdit = new DevExpress.XtraEditors.ComboBoxEdit();
             this.ReportviewpanelControl = new DevExpress.XtraEditors.PanelControl();
             this.panelControl1 = new DevExpress.XtraEditors.PanelControl();
@@ -43,7 +41,6 @@ namespace MICReportSystem.Views
             this.labelControl2 = new DevExpress.XtraEditors.LabelControl();
             this.AutotoggleSwitch = new DevExpress.XtraEditors.ToggleSwitch();
             this.labelControl1 = new DevExpress.XtraEditors.LabelControl();
-            this.LogotextEdit = new DevExpress.XtraEditors.TextEdit();
             ((System.ComponentModel.ISupportInitialize)(this.groupControl1)).BeginInit();
             this.groupControl1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.DaycomboBoxEdit.Properties)).BeginInit();
@@ -52,16 +49,12 @@ namespace MICReportSystem.Views
             this.panelControl1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.PathtextEdit.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.AutotoggleSwitch.Properties)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.LogotextEdit.Properties)).BeginInit();
             this.SuspendLayout();
             // 
             // groupControl1
             // 
             this.groupControl1.AppearanceCaption.Font = new System.Drawing.Font("Tahoma", 12F);
             this.groupControl1.AppearanceCaption.Options.UseFont = true;
-            this.groupControl1.Controls.Add(this.LogotextEdit);
-            this.groupControl1.Controls.Add(this.LogoPathsimpleButton);
-            this.groupControl1.Controls.Add(this.labelControl4);
             this.groupControl1.Controls.Add(this.DaycomboBoxEdit);
             this.groupControl1.Controls.Add(this.ReportviewpanelControl);
             this.groupControl1.Controls.Add(this.panelControl1);
@@ -78,33 +71,9 @@ namespace MICReportSystem.Views
             this.groupControl1.TabIndex = 0;
             this.groupControl1.Text = "月報表匯出設定";
             // 
-            // LogoPathsimpleButton
-            // 
-            this.LogoPathsimpleButton.AllowFocus = false;
-            this.LogoPathsimpleButton.Appearance.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(80)))), ((int)(((byte)(80)))), ((int)(((byte)(80)))));
-            this.LogoPathsimpleButton.Appearance.Font = new System.Drawing.Font("Tahoma", 14F);
-            this.LogoPathsimpleButton.Appearance.Options.UseBackColor = true;
-            this.LogoPathsimpleButton.Appearance.Options.UseFont = true;
-            this.LogoPathsimpleButton.Location = new System.Drawing.Point(714, 67);
-            this.LogoPathsimpleButton.Name = "LogoPathsimpleButton";
-            this.LogoPathsimpleButton.Size = new System.Drawing.Size(124, 30);
-            this.LogoPathsimpleButton.TabIndex = 13;
-            this.LogoPathsimpleButton.Text = "設定路徑";
-            this.LogoPathsimpleButton.Click += new System.EventHandler(this.LogoPathsimpleButton_Click);
-            // 
-            // labelControl4
-            // 
-            this.labelControl4.Appearance.Font = new System.Drawing.Font("Tahoma", 14F);
-            this.labelControl4.Appearance.Options.UseFont = true;
-            this.labelControl4.Location = new System.Drawing.Point(12, 71);
-            this.labelControl4.Name = "labelControl4";
-            this.labelControl4.Size = new System.Drawing.Size(78, 23);
-            this.labelControl4.TabIndex = 12;
-            this.labelControl4.Text = "Logo路徑";
-            // 
             // DaycomboBoxEdit
             // 
-            this.DaycomboBoxEdit.Location = new System.Drawing.Point(182, 132);
+            this.DaycomboBoxEdit.Location = new System.Drawing.Point(182, 128);
             this.DaycomboBoxEdit.Name = "DaycomboBoxEdit";
             this.DaycomboBoxEdit.Properties.AllowFocused = false;
             this.DaycomboBoxEdit.Properties.Appearance.Font = new System.Drawing.Font("Tahoma", 12F);
@@ -209,7 +178,7 @@ namespace MICReportSystem.Views
             // 
             this.labelControl3.Appearance.Font = new System.Drawing.Font("Tahoma", 14F);
             this.labelControl3.Appearance.Options.UseFont = true;
-            this.labelControl3.Location = new System.Drawing.Point(12, 134);
+            this.labelControl3.Location = new System.Drawing.Point(12, 130);
             this.labelControl3.Name = "labelControl3";
             this.labelControl3.Size = new System.Drawing.Size(164, 23);
             this.labelControl3.TabIndex = 5;
@@ -222,7 +191,7 @@ namespace MICReportSystem.Views
             this.PathsimpleButton.Appearance.Font = new System.Drawing.Font("Tahoma", 14F);
             this.PathsimpleButton.Appearance.Options.UseBackColor = true;
             this.PathsimpleButton.Appearance.Options.UseFont = true;
-            this.PathsimpleButton.Location = new System.Drawing.Point(714, 100);
+            this.PathsimpleButton.Location = new System.Drawing.Point(714, 80);
             this.PathsimpleButton.Name = "PathsimpleButton";
             this.PathsimpleButton.Size = new System.Drawing.Size(124, 30);
             this.PathsimpleButton.TabIndex = 4;
@@ -232,7 +201,7 @@ namespace MICReportSystem.Views
             // PathtextEdit
             // 
             this.PathtextEdit.Enabled = false;
-            this.PathtextEdit.Location = new System.Drawing.Point(132, 102);
+            this.PathtextEdit.Location = new System.Drawing.Point(132, 82);
             this.PathtextEdit.Name = "PathtextEdit";
             this.PathtextEdit.Properties.Appearance.Font = new System.Drawing.Font("Tahoma", 12F);
             this.PathtextEdit.Properties.Appearance.Options.UseFont = true;
@@ -243,7 +212,7 @@ namespace MICReportSystem.Views
             // 
             this.labelControl2.Appearance.Font = new System.Drawing.Font("Tahoma", 14F);
             this.labelControl2.Appearance.Options.UseFont = true;
-            this.labelControl2.Location = new System.Drawing.Point(12, 104);
+            this.labelControl2.Location = new System.Drawing.Point(12, 84);
             this.labelControl2.Name = "labelControl2";
             this.labelControl2.Size = new System.Drawing.Size(114, 23);
             this.labelControl2.TabIndex = 2;
@@ -256,10 +225,9 @@ namespace MICReportSystem.Views
             this.AutotoggleSwitch.Properties.AllowFocused = false;
             this.AutotoggleSwitch.Properties.Appearance.Font = new System.Drawing.Font("Tahoma", 20F);
             this.AutotoggleSwitch.Properties.Appearance.Options.UseFont = true;
-            this.AutotoggleSwitch.Properties.OffText = "Off";
-            this.AutotoggleSwitch.Properties.OnText = "On";
-            this.AutotoggleSwitch.Properties.ShowText = false;
-            this.AutotoggleSwitch.Size = new System.Drawing.Size(114, 37);
+            this.AutotoggleSwitch.Properties.OffText = "關閉";
+            this.AutotoggleSwitch.Properties.OnText = "啟動";
+            this.AutotoggleSwitch.Size = new System.Drawing.Size(173, 37);
             this.AutotoggleSwitch.TabIndex = 1;
             // 
             // labelControl1
@@ -271,16 +239,6 @@ namespace MICReportSystem.Views
             this.labelControl1.Size = new System.Drawing.Size(76, 23);
             this.labelControl1.TabIndex = 0;
             this.labelControl1.Text = "自動匯出";
-            // 
-            // LogotextEdit
-            // 
-            this.LogotextEdit.Enabled = false;
-            this.LogotextEdit.Location = new System.Drawing.Point(132, 69);
-            this.LogotextEdit.Name = "LogotextEdit";
-            this.LogotextEdit.Properties.Appearance.Font = new System.Drawing.Font("Tahoma", 12F);
-            this.LogotextEdit.Properties.Appearance.Options.UseFont = true;
-            this.LogotextEdit.Size = new System.Drawing.Size(576, 26);
-            this.LogotextEdit.TabIndex = 14;
             // 
             // SettingUserControl
             // 
@@ -298,7 +256,6 @@ namespace MICReportSystem.Views
             this.panelControl1.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.PathtextEdit.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.AutotoggleSwitch.Properties)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.LogotextEdit.Properties)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -317,8 +274,5 @@ namespace MICReportSystem.Views
         private DevExpress.XtraEditors.SimpleButton CancelsimpleButton;
         private DevExpress.XtraEditors.SimpleButton OKsimpleButton;
         private DevExpress.XtraEditors.ComboBoxEdit DaycomboBoxEdit;
-        private DevExpress.XtraEditors.SimpleButton LogoPathsimpleButton;
-        private DevExpress.XtraEditors.LabelControl labelControl4;
-        private DevExpress.XtraEditors.TextEdit LogotextEdit;
     }
 }

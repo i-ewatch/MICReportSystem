@@ -1,6 +1,7 @@
 ﻿using DevExpress.Utils;
 using DevExpress.XtraCharts;
 using MICReportSystem.Methods;
+using MICReportSystem.Mysql_Module;
 using MICReportSystem.Protocols;
 using System;
 using System.Collections.Generic;
@@ -72,6 +73,7 @@ namespace MICReportSystem.Views
             XYDiagram diagram = (XYDiagram)MonthchartControl.Diagram;
             diagram.AxisX.DateTimeScaleOptions.MeasureUnit = DateTimeMeasureUnit.Day; // 顯示設定
             diagram.AxisX.DateTimeScaleOptions.GridAlignment = DateTimeGridAlignment.Day; // 刻度設定
+            diagram.AxisX.WholeRange.SideMarginsValue = 1;//不需要邊寬
             #endregion
             #region 分電表顯示
             int ElectricInt = 0;
@@ -109,7 +111,49 @@ namespace MICReportSystem.Views
             foreach (var ElectricConfigitem in ElectricConfigs)
             {
                 var ElectricTotal = MysqlMethod.Search_ElectricTotal($"{TTime:yyyyMM01}", $"{TTime:yyyyMM31}", ElectricConfigitem.GatewayIndex, ElectricConfigitem.DeviceIndex);
-                ElectricTotals.AddRange(ElectricTotal);
+                for (int i = 0; i < DateTime.DaysInMonth(DateTime.Now.Year, DateTime.Now.Month); i++)
+                {
+                    foreach (var item in ElectricTotal)
+                    {
+                        if (i >= 9)
+                        {
+                            if (item.ttime == DateTime.Now.ToString("yyyyMM") + $"{i + 1}")
+                            {
+                                ElectricTotals.Add(item);
+                            }
+                            else
+                            {
+                                ElectricTotal electricTotal = new ElectricTotal()
+                                {
+                                    ttimen = Convert.ToDateTime(DateTime.Now.ToString("yyyy/MM/") + $"{i + 1}" + " 00:00:00"),
+                                    GatewayIndex = ElectricConfigitem.GatewayIndex,
+                                    DeviceIndex = ElectricConfigitem.DeviceIndex,
+                                    KwhTotal = 0
+                                };
+                                ElectricTotals.Add(electricTotal);
+                            }
+                        }
+                        else
+                        {
+                            if (item.ttime == DateTime.Now.ToString("yyyyMM") + $"0{i + 1}")
+                            {
+                                ElectricTotals.Add(item);
+                            }
+                            else
+                            {
+                                ElectricTotal electricTotal = new ElectricTotal()
+                                {
+                                    ttimen = Convert.ToDateTime(DateTime.Now.ToString("yyyy/MM/") + $"0{i + 1}" + " 00:00:00"),
+                                    GatewayIndex = ElectricConfigitem.GatewayIndex,
+                                    DeviceIndex = ElectricConfigitem.DeviceIndex,
+                                    KwhTotal = 0
+                                };
+                                ElectricTotals.Add(electricTotal);
+                            }
+                        }
+                       
+                    }
+                }
             }
         }
     }

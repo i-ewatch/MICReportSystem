@@ -1,18 +1,20 @@
-﻿using MICReportSystem.Configuration;
+﻿using DevExpress.XtraReports.UI;
+using MICReportSystem.Configuration;
 using MICReportSystem.Methods;
 using MICReportSystem.Mysql_Module;
 using System;
+using System.Collections;
 using System.Collections.Generic;
+using System.ComponentModel;
+using System.Drawing;
 
 namespace MICReportSystem.Views
 {
-    public partial class BillingXtraReport : DevExpress.XtraReports.UI.XtraReport
+    public partial class AnalysisXtraReport : DevExpress.XtraReports.UI.XtraReport
     {
-        public BillingXtraReport(MysqlMethod mysql, string TTime)
+        public AnalysisXtraReport()
         {
             InitializeComponent();
-            MysqlMethod = mysql;
-            create_XtraReport(TTime);
         }
         /// <summary>
         /// 資料庫方法
@@ -38,8 +40,9 @@ namespace MICReportSystem.Views
         /// 總累積量數值
         /// </summary>
         private List<decimal> TotalkWh { get; set; } = new List<decimal>();
-        private void create_XtraReport(string TTime)
+        public void create_XtraReport(MysqlMethod mysql, string TTime)
         {
+            MysqlMethod = mysql;
             var TaiwanDate = new System.Globalization.TaiwanCalendar();//民國轉換
             XtraReportSetting = InitialMethod.InitialXtraReportLoad();
             DateTime dateTime = Convert.ToDateTime(TTime);

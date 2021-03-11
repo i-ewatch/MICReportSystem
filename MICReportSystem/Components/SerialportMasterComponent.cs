@@ -147,6 +147,7 @@ namespace MICReportSystem.Components
                             Thread.Sleep(10);
                         }
                     }
+                    catch (ThreadAbortException) { }
                     catch (Exception ex)
                     {
                         Log.Error(ex, $"Connect to device({GatewayConfig.Location}) failed.");

@@ -49,7 +49,7 @@ namespace MICReportSystem.Protocols
                 ConnectFlag = true;
                 InsertSql();
             }
-            catch (ThreadAbortException) { Console.WriteLine("123"); }
+            catch (ThreadAbortException) { }
             catch (Exception ex)
             {
                 Log.Error(ex, $"BAW-4C電表通訊失敗 ID : {ID}");
