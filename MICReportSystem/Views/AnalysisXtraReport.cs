@@ -64,19 +64,31 @@ namespace MICReportSystem.Views
             }
 
             var SumTotalkWh = TotalkWh[0] + TotalkWh[1];
-
+            StartDatexrLabel1.Text = $"{TaiwanDate.GetYear(dateTime.AddMonths(-1))}";
+            StartDatexrLabel2.Text = $"{dateTime.AddMonths(-1).ToString("MM")}";
             if (XtraReportSetting.Day.ToString().Length == 2)
             {
-                StartDatexrLabel.Text = $"{TaiwanDate.GetYear(dateTime.AddMonths(-1))}年{dateTime.AddMonths(-1).ToString("MM")}月{ XtraReportSetting.Day}日";
+                StartDatexrLabel3.Text = $"{XtraReportSetting.Day}";
+                //StartDatexrLabel1.Text = $"{TaiwanDate.GetYear(dateTime.AddMonths(-1))}年{dateTime.AddMonths(-1).ToString("MM")}月{ XtraReportSetting.Day}日";
             }
             else
             {
-                StartDatexrLabel.Text = $"{TaiwanDate.GetYear(dateTime.AddMonths(-1))}年{dateTime.AddMonths(-1).ToString("MM")}月0{ XtraReportSetting.Day}日";
+                StartDatexrLabel3.Text = $"0{XtraReportSetting.Day}";
+                //StartDatexrLabel1.Text = $"{TaiwanDate.GetYear(dateTime.AddMonths(-1))}年{dateTime.AddMonths(-1).ToString("MM")}月0{ XtraReportSetting.Day}日";
             }
 
-            EndDatexrLabel.Text = $"{TaiwanDate.GetYear(dateTime.AddDays(-1))}年{dateTime.AddDays(-1).ToString("MM月dd日")}";
-            CurrentMeterReadingDayxrLabel.Text = $"{TaiwanDate.GetYear(nowtime)}年{nowtime.ToString("MM")}月{nowtime.ToString("dd")}日";//本期抄表日
-            DateOfReportingxrLabel.Text = $"{TaiwanDate.GetYear(nowtime)}年{nowtime.ToString("MM")}月{nowtime.ToString("dd")}日";//填報日期
+            EndDatexrLabel1.Text = $"{TaiwanDate.GetYear(dateTime.AddDays(-1))}";
+            EndDatexrLabel2.Text = $"{dateTime.AddDays(-1).ToString("MM")}";
+            EndDatexrLabel3.Text = $"{dateTime.AddDays(-1).ToString("dd")}";
+            //EndDatexrLabel1.Text = $"{TaiwanDate.GetYear(dateTime.AddDays(-1))}年{dateTime.AddDays(-1).ToString("MM月dd日")}";
+            CurrentMeterReadingDayxrLabel1.Text = $"{TaiwanDate.GetYear(nowtime)}";
+            CurrentMeterReadingDayxrLabel2.Text = $"{nowtime.ToString("MM")}";
+            CurrentMeterReadingDayxrLabel3.Text = $"{nowtime.ToString("dd")}";
+            //CurrentMeterReadingDayxrLabel1.Text = $"{TaiwanDate.GetYear(nowtime)}年{nowtime.ToString("MM")}月{nowtime.ToString("dd")}日";//本期抄表日
+            DateOfReportingxrLabel1.Text = $"{TaiwanDate.GetYear(nowtime)}";
+            DateOfReportingxrLabel2.Text = $"{nowtime.ToString("MM")}";
+            DateOfReportingxrLabel3.Text = $"{nowtime.ToString("dd")}";
+            //DateOfReportingxrLabel1.Text = $"{TaiwanDate.GetYear(nowtime)}年{nowtime.ToString("MM")}月{nowtime.ToString("dd")}日";//填報日期
             if (ReportConfigs.Count > 0)
             {
                 #region 第一顆電表

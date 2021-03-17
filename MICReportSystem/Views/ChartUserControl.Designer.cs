@@ -188,7 +188,8 @@ namespace MICReportSystem.Views
             "瞬間功率",
             "瞬間虛功率",
             "功率因數",
-            "頻率"});
+            "頻率",
+            "累積電量"});
             this.ValuecomboBoxEdit.Properties.TextEditStyle = DevExpress.XtraEditors.Controls.TextEditStyles.DisableTextEditor;
             this.ValuecomboBoxEdit.Size = new System.Drawing.Size(176, 40);
             this.ValuecomboBoxEdit.TabIndex = 12;

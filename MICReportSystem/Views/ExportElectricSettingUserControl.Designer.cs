@@ -102,7 +102,7 @@ namespace MICReportSystem.Views
             this.PurchaseAndSaleCapacitytextEdit.Properties.Appearance.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
             this.PurchaseAndSaleCapacitytextEdit.Properties.AppearanceFocused.Options.UseTextOptions = true;
             this.PurchaseAndSaleCapacitytextEdit.Properties.AppearanceFocused.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
-            this.PurchaseAndSaleCapacitytextEdit.Properties.Mask.EditMask = "[0-9]*";
+            this.PurchaseAndSaleCapacitytextEdit.Properties.Mask.EditMask = "[0-9]*.[0-9]*";
             this.PurchaseAndSaleCapacitytextEdit.Properties.Mask.MaskType = DevExpress.XtraEditors.Mask.MaskType.RegEx;
             this.PurchaseAndSaleCapacitytextEdit.Properties.Mask.UseMaskAsDisplayFormat = true;
             this.PurchaseAndSaleCapacitytextEdit.Size = new System.Drawing.Size(105, 26);
@@ -118,7 +118,7 @@ namespace MICReportSystem.Views
             this.DeviceCapacitytextEdit.Properties.Appearance.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
             this.DeviceCapacitytextEdit.Properties.AppearanceFocused.Options.UseTextOptions = true;
             this.DeviceCapacitytextEdit.Properties.AppearanceFocused.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
-            this.DeviceCapacitytextEdit.Properties.Mask.EditMask = "[0-9]*";
+            this.DeviceCapacitytextEdit.Properties.Mask.EditMask = "[0-9]*.[0-9]*";
             this.DeviceCapacitytextEdit.Properties.Mask.MaskType = DevExpress.XtraEditors.Mask.MaskType.RegEx;
             this.DeviceCapacitytextEdit.Properties.Mask.UseMaskAsDisplayFormat = true;
             this.DeviceCapacitytextEdit.Size = new System.Drawing.Size(105, 26);

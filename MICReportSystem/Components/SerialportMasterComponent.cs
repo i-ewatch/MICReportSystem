@@ -151,6 +151,10 @@ namespace MICReportSystem.Components
                     catch (Exception ex)
                     {
                         Log.Error(ex, $"Connect to device({GatewayConfig.Location}) failed.");
+                        foreach (var item in ElectricAbsProtocols)
+                        {
+                            item.ConnectFlag = false;
+                        }
                     }
                     ComponentTime = DateTime.Now;
                 }

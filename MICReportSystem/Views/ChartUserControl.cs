@@ -99,16 +99,18 @@ namespace MICReportSystem.Views
                 string endtime = ((DateTime)EnddateEdit.EditValue).ToString("yyyyMMdd235959");//結束時間
                 List<Series> Lineseries = new List<Series>();//曲線圖用
                 ThreePhaseElectricMeter_Logs = new List<ThreePhaseElectricMeter_Log>(); //報表用
+                ElectricTotals = new List<ElectricTotal>();
                 ElectricSearchTypeEnum electricSearchTypeEnum = (ElectricSearchTypeEnum)ValuecomboBoxEdit.SelectedIndex;
                 for (int i = 0; i < DeviceCheckedcomboBoxEdit.Properties.Items.Count; i++)
                 {
                     if (DeviceCheckedcomboBoxEdit.Properties.Items[i].CheckState == CheckState.Checked)
                     {
                         ElectricConfig = (ElectricConfig)DeviceCheckedcomboBoxEdit.Properties.Items[i].Tag;
-
                         var data = MysqlMethod.Search_ThreePhaseElectricMeter_Log(starttime, endtime, ElectricConfig.GatewayIndex, ElectricConfig.DeviceIndex);
+                        var ElectricTotaldata = MysqlMethod.Search_ElectricTotal(starttime, endtime, ElectricConfig.GatewayIndex, ElectricConfig.DeviceIndex);
                         #region 報表資料整理
                         ThreePhaseElectricMeter_Logs.AddRange(data);
+                        ElectricTotals.AddRange(ElectricTotaldata);
                         #endregion
                         #region 曲線圖資料整理
                         switch (electricSearchTypeEnum)
@@ -207,12 +209,42 @@ namespace MICReportSystem.Views
                                     Lineseries.Add(series1);
                                 }
                                 break;
+                            case ElectricSearchTypeEnum.kWh:
+                                {
+                                    Series series1 = new Series($"{ElectricConfig.DeviceName} - 累積電量", viewType: ViewType.Bar);
+                                    series1.CrosshairLabelPattern = "{S}" + "\n" + "時間:{A:yyyy-MM-dd} " + "\n" + "數值:{V:0.00}kWh";
+                                    series1.LegendTextPattern = "{A}";
+                                    series1.ArgumentDataMember = "ttimen";
+                                    series1.LabelsVisibility = DefaultBoolean.False;
+                                    series1.ValueDataMembers.AddRange(new string[] { "KwhTotal" });
+                                    Lineseries.Add(series1);
+                                }
+                                break;
                         }
                         #endregion
                     }
                 }
-                gridControl1.DataSource = ThreePhaseElectricMeter_Logs;
-                LinechartControl.DataSource = ThreePhaseElectricMeter_Logs;
+                switch (electricSearchTypeEnum)
+                {
+                    case ElectricSearchTypeEnum.Voltage:
+                    case ElectricSearchTypeEnum.Current:
+                    case ElectricSearchTypeEnum.kW:
+                    case ElectricSearchTypeEnum.kVAR:
+                    case ElectricSearchTypeEnum.PF:
+                    case ElectricSearchTypeEnum.HZ:
+                        {
+                            gridControl1.DataSource = ThreePhaseElectricMeter_Logs;
+                            LinechartControl.DataSource = ThreePhaseElectricMeter_Logs;
+                        }
+                        break;
+                    case ElectricSearchTypeEnum.kWh:
+                        {
+                            gridControl1.DataSource = ElectricTotals;
+                            LinechartControl.DataSource = ElectricTotals;
+                        }
+                        break;
+                }
+
                 #region 報表
                 for (int i = 0; i < gridView1.Columns.Count; i++)
                 {
@@ -224,50 +256,85 @@ namespace MICReportSystem.Views
                         {
                             gridView1.Columns["trv"].Visible = true;
                             gridView1.Columns["trv"].Caption = "T相電壓";
+                            gridView1.Columns["trv"].BestFit();
                             gridView1.Columns["stv"].Visible = true;
                             gridView1.Columns["stv"].Caption = "S相電壓";
+                            gridView1.Columns["stv"].BestFit();
                             gridView1.Columns["rsv"].Visible = true;
                             gridView1.Columns["rsv"].Caption = "R相電壓";
+                            gridView1.Columns["rsv"].BestFit();
                         }
                         break;
                     case ElectricSearchTypeEnum.Current:
                         {
                             gridView1.Columns["ta"].Visible = true;
                             gridView1.Columns["ta"].Caption = "T相電流";
+                            gridView1.Columns["ta"].BestFit();
                             gridView1.Columns["sa"].Visible = true;
                             gridView1.Columns["sa"].Caption = "S相電流";
+                            gridView1.Columns["sa"].BestFit();
                             gridView1.Columns["ra"].Visible = true;
                             gridView1.Columns["ra"].Caption = "R相電流";
+                            gridView1.Columns["ta"].BestFit();
                         }
                         break;
                     case ElectricSearchTypeEnum.kW:
                         {
                             gridView1.Columns["kw"].Visible = true;
                             gridView1.Columns["kw"].Caption = "瞬間功率";
+                            gridView1.Columns["kw"].BestFit();
                         }
                         break;
                     case ElectricSearchTypeEnum.kVAR:
                         {
                             gridView1.Columns["kvar"].Visible = true;
                             gridView1.Columns["kvar"].Caption = "瞬間虛功率";
+                            gridView1.Columns["kvar"].BestFit();
                         }
                         break;
                     case ElectricSearchTypeEnum.PF:
                         {
                             gridView1.Columns["pfe"].Visible = true;
                             gridView1.Columns["pfe"].Caption = "功率因數";
+                            gridView1.Columns["pfe"].BestFit();
                         }
                         break;
                     case ElectricSearchTypeEnum.HZ:
                         {
                             gridView1.Columns["hz"].Visible = true;
                             gridView1.Columns["hz"].Caption = "頻率";
+                            gridView1.Columns["hz"].BestFit();
+                        }
+                        break;
+                    case ElectricSearchTypeEnum.kWh:
+                        {
+                            gridView1.Columns["KwhTotal"].Visible = true;
+                            gridView1.Columns["KwhTotal"].Caption = "累積電量";
+                            gridView1.Columns["KwhTotal"].BestFit();
                         }
                         break;
                 }
                 gridView1.Columns["ttimen"].Visible = true;
                 gridView1.Columns["ttimen"].Caption = "時間";
-                gridView1.Columns["ttimen"].DisplayFormat.FormatString = "yyyy/MM/dd HH:mm:ss";
+
+                switch (electricSearchTypeEnum)
+                {
+                    case ElectricSearchTypeEnum.Voltage:
+                    case ElectricSearchTypeEnum.Current:
+                    case ElectricSearchTypeEnum.kW:
+                    case ElectricSearchTypeEnum.kVAR:
+                    case ElectricSearchTypeEnum.PF:
+                    case ElectricSearchTypeEnum.HZ:
+                        {
+                            gridView1.Columns["ttimen"].DisplayFormat.FormatString = "yyyy/MM/dd HH:mm:ss";
+                        }
+                        break;
+                    case ElectricSearchTypeEnum.kWh:
+                        {
+                            gridView1.Columns["ttimen"].DisplayFormat.FormatString = "yyyy/MM/dd";
+                        }
+                        break;
+                }
                 gridView1.Columns["ttimen"].BestFit();
                 gridView1.Columns["DeviceIndex"].Visible = true;
                 gridView1.Columns["DeviceIndex"].Group();
@@ -302,11 +369,31 @@ namespace MICReportSystem.Views
                     {
                         diagram.EnableAxisXZooming = true;//放大縮小
                         diagram.EnableAxisXScrolling = true;//拖曳
-                        diagram.AxisX.DateTimeScaleOptions.MeasureUnit = DateTimeMeasureUnit.Minute; // 顯示設定
-                        diagram.AxisX.DateTimeScaleOptions.GridAlignment = DateTimeGridAlignment.Minute; // 刻度設定
-                        diagram.AxisX.Label.TextPattern = "{A:yyyy-MM-dd HH:mm}";//X軸顯示
-                        diagram.AxisX.WholeRange.SideMarginsValue = 0;//不需要邊寬
-                        diagram.AxisY.WholeRange.AlwaysShowZeroLevel = false;
+                        switch (electricSearchTypeEnum)
+                        {
+                            case ElectricSearchTypeEnum.Voltage:
+                            case ElectricSearchTypeEnum.Current:
+                            case ElectricSearchTypeEnum.kW:
+                            case ElectricSearchTypeEnum.kVAR:
+                            case ElectricSearchTypeEnum.PF:
+                            case ElectricSearchTypeEnum.HZ:
+                                {
+                                    diagram.AxisX.DateTimeScaleOptions.MeasureUnit = DateTimeMeasureUnit.Minute; // 顯示設定
+                                    diagram.AxisX.DateTimeScaleOptions.GridAlignment = DateTimeGridAlignment.Minute; // 刻度設定
+                                    diagram.AxisX.WholeRange.SideMarginsValue = 0;//不需要邊寬
+                                    diagram.AxisY.WholeRange.AlwaysShowZeroLevel = false;
+                                    diagram.AxisX.Label.TextPattern = "{A:yyyy-MM-dd HH:mm}";//X軸顯示   
+                                }
+                                break;
+                            case ElectricSearchTypeEnum.kWh:
+                                {
+                                    diagram.AxisX.DateTimeScaleOptions.MeasureUnit = DateTimeMeasureUnit.Day; // 顯示設定
+                                    diagram.AxisX.DateTimeScaleOptions.GridAlignment = DateTimeGridAlignment.Day; // 刻度設定
+                                    diagram.AxisX.WholeRange.SideMarginsValue = 1;//不需要邊寬
+                                    diagram.AxisX.Label.TextPattern = "{A:yyyy-MM-dd}";//X軸顯示   
+                                }
+                                break;
+                        }                 
                     }
                 }
                 #endregion

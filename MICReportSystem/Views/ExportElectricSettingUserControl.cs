@@ -19,8 +19,8 @@ namespace MICReportSystem.Views
             PricStartTimetimeEdit.EditValue = ReportConfig.PricStartTime.ToString("yyyy/MM/dd");
             PricEndTimetimeEdit.EditValue = ReportConfig.PricEndTime.ToString("yyyy/MM/dd");
             ElectricityPurchaseRatetextEdit.Text = ReportConfig.ElectricityPurchaseRate.ToString("F4");
-            DeviceCapacitytextEdit.Text = ReportConfig.DeviceCapacity.ToString();
-            PurchaseAndSaleCapacitytextEdit.Text = ReportConfig.PurchaseAndSaleCapacity.ToString();
+            DeviceCapacitytextEdit.Text = ReportConfig.DeviceCapacity.ToString("F3");
+            PurchaseAndSaleCapacitytextEdit.Text = ReportConfig.PurchaseAndSaleCapacity.ToString("F3");
         }
         public ReportConfig ReportConfig { get; set; }
         public MysqlMethod MysqlMethod { get; set; }
@@ -34,8 +34,8 @@ namespace MICReportSystem.Views
             ReportConfig.PricStartTime = Convert.ToDateTime(PricStartTimetimeEdit.EditValue);
             ReportConfig.PricEndTime = Convert.ToDateTime(PricEndTimetimeEdit.EditValue);
             ReportConfig.ElectricityPurchaseRate = Convert.ToDecimal(ElectricityPurchaseRatetextEdit.Text);
-            ReportConfig.DeviceCapacity = Convert.ToInt32(DeviceCapacitytextEdit.Text);
-            ReportConfig.PurchaseAndSaleCapacity = Convert.ToInt32(PurchaseAndSaleCapacitytextEdit.Text);
+            ReportConfig.DeviceCapacity = Convert.ToDecimal(DeviceCapacitytextEdit.Text);
+            ReportConfig.PurchaseAndSaleCapacity = Convert.ToDecimal(PurchaseAndSaleCapacitytextEdit.Text);
             MysqlMethod.Update_ReportConfig(ReportConfig);
         }
     }

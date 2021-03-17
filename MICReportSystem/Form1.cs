@@ -110,7 +110,7 @@ namespace MICReportSystem
 
             #region Loading initial
             FluentSplashScreenOptions op = new FluentSplashScreenOptions();
-            op.Title = "帆宣自動化抄表系統";
+            op.Title = "太陽能資料蒐集系統";//太陽能資料蒐集系統  帆宣自動化抄表系統
             op.Subtitle = "Automatic Meter Reading System";
             op.LeftFooter = "Copyright © 2021 SIN MAO Energy CO., LTD." + Environment.NewLine + "All Rights reserved.";
             op.LoadingIndicatorType = FluentLoadingIndicatorType.Dots;

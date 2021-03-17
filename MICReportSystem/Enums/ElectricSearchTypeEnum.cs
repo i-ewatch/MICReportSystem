@@ -28,6 +28,10 @@
         /// <summary>
         /// 頻率
         /// </summary>
-        HZ
+        HZ,
+        /// <summary>
+        /// 累積電量
+        /// </summary>
+        kWh
     }
 }

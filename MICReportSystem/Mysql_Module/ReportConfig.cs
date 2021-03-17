@@ -51,11 +51,11 @@ namespace MICReportSystem.Mysql_Module
         /// <summary>
         /// 裝置容量
         /// </summary>
-        public int DeviceCapacity { get; set; }
+        public decimal DeviceCapacity { get; set; }
         /// <summary>
         /// 購售電容量
         /// </summary>
-        public int PurchaseAndSaleCapacity { get; set; }
+        public decimal PurchaseAndSaleCapacity { get; set; }
         /// <summary>
         /// 比值
         /// </summary>

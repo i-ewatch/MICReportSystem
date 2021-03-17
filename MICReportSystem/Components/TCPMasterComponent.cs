@@ -90,6 +90,10 @@ namespace MICReportSystem.Components
                     catch (Exception ex)
                     {
                         Log.Error(ex, $"Modbus TCP 無法通訊 IP : {GatewayConfig.Location} Port : {GatewayConfig.Rate}");
+                        foreach (var item in ElectricAbsProtocols)
+                        {
+                            item.ConnectFlag = false;
+                        }
                     }
                 }
                 else
