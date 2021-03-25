@@ -47,6 +47,26 @@ namespace MICReportSystem.Views
             this.xrLabel26 = new DevExpress.XtraReports.UI.XRLabel();
             this.xrLabel27 = new DevExpress.XtraReports.UI.XRLabel();
             this.Detail = new DevExpress.XtraReports.UI.DetailBand();
+            this.xrLabel35 = new DevExpress.XtraReports.UI.XRLabel();
+            this.DateOfReportingxrLabel2 = new DevExpress.XtraReports.UI.XRLabel();
+            this.xrLabel40 = new DevExpress.XtraReports.UI.XRLabel();
+            this.DateOfReportingxrLabel3 = new DevExpress.XtraReports.UI.XRLabel();
+            this.xrLabel42 = new DevExpress.XtraReports.UI.XRLabel();
+            this.xrLabel37 = new DevExpress.XtraReports.UI.XRLabel();
+            this.CurrentMeterReadingDayxrLabel3 = new DevExpress.XtraReports.UI.XRLabel();
+            this.xrLabel39 = new DevExpress.XtraReports.UI.XRLabel();
+            this.CurrentMeterReadingDayxrLabel2 = new DevExpress.XtraReports.UI.XRLabel();
+            this.xrLabel33 = new DevExpress.XtraReports.UI.XRLabel();
+            this.xrLabel36 = new DevExpress.XtraReports.UI.XRLabel();
+            this.EndDatexrLabel3 = new DevExpress.XtraReports.UI.XRLabel();
+            this.xrLabel34 = new DevExpress.XtraReports.UI.XRLabel();
+            this.EndDatexrLabel2 = new DevExpress.XtraReports.UI.XRLabel();
+            this.xrLabel32 = new DevExpress.XtraReports.UI.XRLabel();
+            this.StartDatexrLabel3 = new DevExpress.XtraReports.UI.XRLabel();
+            this.StartDatexrLabel2 = new DevExpress.XtraReports.UI.XRLabel();
+            this.xrLabel31 = new DevExpress.XtraReports.UI.XRLabel();
+            this.xrLabel30 = new DevExpress.XtraReports.UI.XRLabel();
+            this.xrLabel29 = new DevExpress.XtraReports.UI.XRLabel();
             this.xrTable1 = new DevExpress.XtraReports.UI.XRTable();
             this.xrTableRow1 = new DevExpress.XtraReports.UI.XRTableRow();
             this.xrTableCell1 = new DevExpress.XtraReports.UI.XRTableCell();
@@ -133,26 +153,6 @@ namespace MICReportSystem.Views
             this.xrLabel2 = new DevExpress.XtraReports.UI.XRLabel();
             this.xrLabel1 = new DevExpress.XtraReports.UI.XRLabel();
             this.xrLabel28 = new DevExpress.XtraReports.UI.XRLabel();
-            this.xrLabel29 = new DevExpress.XtraReports.UI.XRLabel();
-            this.xrLabel30 = new DevExpress.XtraReports.UI.XRLabel();
-            this.xrLabel31 = new DevExpress.XtraReports.UI.XRLabel();
-            this.StartDatexrLabel2 = new DevExpress.XtraReports.UI.XRLabel();
-            this.StartDatexrLabel3 = new DevExpress.XtraReports.UI.XRLabel();
-            this.xrLabel32 = new DevExpress.XtraReports.UI.XRLabel();
-            this.EndDatexrLabel2 = new DevExpress.XtraReports.UI.XRLabel();
-            this.xrLabel34 = new DevExpress.XtraReports.UI.XRLabel();
-            this.EndDatexrLabel3 = new DevExpress.XtraReports.UI.XRLabel();
-            this.xrLabel36 = new DevExpress.XtraReports.UI.XRLabel();
-            this.xrLabel33 = new DevExpress.XtraReports.UI.XRLabel();
-            this.CurrentMeterReadingDayxrLabel2 = new DevExpress.XtraReports.UI.XRLabel();
-            this.xrLabel37 = new DevExpress.XtraReports.UI.XRLabel();
-            this.CurrentMeterReadingDayxrLabel3 = new DevExpress.XtraReports.UI.XRLabel();
-            this.xrLabel39 = new DevExpress.XtraReports.UI.XRLabel();
-            this.xrLabel35 = new DevExpress.XtraReports.UI.XRLabel();
-            this.DateOfReportingxrLabel2 = new DevExpress.XtraReports.UI.XRLabel();
-            this.xrLabel40 = new DevExpress.XtraReports.UI.XRLabel();
-            this.DateOfReportingxrLabel3 = new DevExpress.XtraReports.UI.XRLabel();
-            this.xrLabel42 = new DevExpress.XtraReports.UI.XRLabel();
             ((System.ComponentModel.ISupportInitialize)(this.xrRichText1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.xrTable1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this)).BeginInit();
@@ -391,6 +391,266 @@ namespace MICReportSystem.Views
             this.xrLabel28});
             this.Detail.HeightF = 788.4769F;
             this.Detail.Name = "Detail";
+            // 
+            // xrLabel35
+            // 
+            this.xrLabel35.Font = new System.Drawing.Font("標楷體", 10F);
+            this.xrLabel35.LocationFloat = new DevExpress.Utils.PointFloat(562.7456F, 147.2425F);
+            this.xrLabel35.Multiline = true;
+            this.xrLabel35.Name = "xrLabel35";
+            this.xrLabel35.Padding = new DevExpress.XtraPrinting.PaddingInfo(2, 2, 0, 0, 100F);
+            this.xrLabel35.SizeF = new System.Drawing.SizeF(16F, 31.33F);
+            this.xrLabel35.StylePriority.UseFont = false;
+            this.xrLabel35.StylePriority.UseTextAlignment = false;
+            this.xrLabel35.Text = "年";
+            this.xrLabel35.TextAlignment = DevExpress.XtraPrinting.TextAlignment.MiddleCenter;
+            // 
+            // DateOfReportingxrLabel2
+            // 
+            this.DateOfReportingxrLabel2.Font = new System.Drawing.Font("標楷體", 10F, System.Drawing.FontStyle.Underline);
+            this.DateOfReportingxrLabel2.LocationFloat = new DevExpress.Utils.PointFloat(578.7456F, 147.2425F);
+            this.DateOfReportingxrLabel2.Multiline = true;
+            this.DateOfReportingxrLabel2.Name = "DateOfReportingxrLabel2";
+            this.DateOfReportingxrLabel2.Padding = new DevExpress.XtraPrinting.PaddingInfo(2, 2, 0, 0, 100F);
+            this.DateOfReportingxrLabel2.SizeF = new System.Drawing.SizeF(20F, 31.33F);
+            this.DateOfReportingxrLabel2.StylePriority.UseFont = false;
+            this.DateOfReportingxrLabel2.StylePriority.UseTextAlignment = false;
+            this.DateOfReportingxrLabel2.Text = "XX";
+            this.DateOfReportingxrLabel2.TextAlignment = DevExpress.XtraPrinting.TextAlignment.MiddleCenter;
+            // 
+            // xrLabel40
+            // 
+            this.xrLabel40.Font = new System.Drawing.Font("標楷體", 10F);
+            this.xrLabel40.LocationFloat = new DevExpress.Utils.PointFloat(598.7456F, 147.2425F);
+            this.xrLabel40.Multiline = true;
+            this.xrLabel40.Name = "xrLabel40";
+            this.xrLabel40.Padding = new DevExpress.XtraPrinting.PaddingInfo(2, 2, 0, 0, 100F);
+            this.xrLabel40.SizeF = new System.Drawing.SizeF(14F, 31.33F);
+            this.xrLabel40.StylePriority.UseFont = false;
+            this.xrLabel40.StylePriority.UseTextAlignment = false;
+            this.xrLabel40.Text = "月";
+            this.xrLabel40.TextAlignment = DevExpress.XtraPrinting.TextAlignment.MiddleCenter;
+            // 
+            // DateOfReportingxrLabel3
+            // 
+            this.DateOfReportingxrLabel3.Font = new System.Drawing.Font("標楷體", 10F, System.Drawing.FontStyle.Underline);
+            this.DateOfReportingxrLabel3.LocationFloat = new DevExpress.Utils.PointFloat(612.7456F, 147.2425F);
+            this.DateOfReportingxrLabel3.Multiline = true;
+            this.DateOfReportingxrLabel3.Name = "DateOfReportingxrLabel3";
+            this.DateOfReportingxrLabel3.Padding = new DevExpress.XtraPrinting.PaddingInfo(2, 2, 0, 0, 100F);
+            this.DateOfReportingxrLabel3.SizeF = new System.Drawing.SizeF(20F, 31.33F);
+            this.DateOfReportingxrLabel3.StylePriority.UseFont = false;
+            this.DateOfReportingxrLabel3.StylePriority.UseTextAlignment = false;
+            this.DateOfReportingxrLabel3.Text = "XX";
+            this.DateOfReportingxrLabel3.TextAlignment = DevExpress.XtraPrinting.TextAlignment.MiddleCenter;
+            // 
+            // xrLabel42
+            // 
+            this.xrLabel42.Font = new System.Drawing.Font("標楷體", 10F);
+            this.xrLabel42.LocationFloat = new DevExpress.Utils.PointFloat(632.7456F, 147.2425F);
+            this.xrLabel42.Multiline = true;
+            this.xrLabel42.Name = "xrLabel42";
+            this.xrLabel42.Padding = new DevExpress.XtraPrinting.PaddingInfo(2, 2, 0, 0, 100F);
+            this.xrLabel42.SizeF = new System.Drawing.SizeF(14F, 31.33F);
+            this.xrLabel42.StylePriority.UseFont = false;
+            this.xrLabel42.StylePriority.UseTextAlignment = false;
+            this.xrLabel42.Text = "日";
+            this.xrLabel42.TextAlignment = DevExpress.XtraPrinting.TextAlignment.MiddleCenter;
+            // 
+            // xrLabel37
+            // 
+            this.xrLabel37.Font = new System.Drawing.Font("標楷體", 10F);
+            this.xrLabel37.LocationFloat = new DevExpress.Utils.PointFloat(598.7456F, 115.9108F);
+            this.xrLabel37.Multiline = true;
+            this.xrLabel37.Name = "xrLabel37";
+            this.xrLabel37.Padding = new DevExpress.XtraPrinting.PaddingInfo(2, 2, 0, 0, 100F);
+            this.xrLabel37.SizeF = new System.Drawing.SizeF(14F, 31.33F);
+            this.xrLabel37.StylePriority.UseFont = false;
+            this.xrLabel37.StylePriority.UseTextAlignment = false;
+            this.xrLabel37.Text = "月";
+            this.xrLabel37.TextAlignment = DevExpress.XtraPrinting.TextAlignment.MiddleCenter;
+            // 
+            // CurrentMeterReadingDayxrLabel3
+            // 
+            this.CurrentMeterReadingDayxrLabel3.Font = new System.Drawing.Font("標楷體", 10F, System.Drawing.FontStyle.Underline);
+            this.CurrentMeterReadingDayxrLabel3.LocationFloat = new DevExpress.Utils.PointFloat(612.7456F, 115.9108F);
+            this.CurrentMeterReadingDayxrLabel3.Multiline = true;
+            this.CurrentMeterReadingDayxrLabel3.Name = "CurrentMeterReadingDayxrLabel3";
+            this.CurrentMeterReadingDayxrLabel3.Padding = new DevExpress.XtraPrinting.PaddingInfo(2, 2, 0, 0, 100F);
+            this.CurrentMeterReadingDayxrLabel3.SizeF = new System.Drawing.SizeF(20F, 31.33F);
+            this.CurrentMeterReadingDayxrLabel3.StylePriority.UseFont = false;
+            this.CurrentMeterReadingDayxrLabel3.StylePriority.UseTextAlignment = false;
+            this.CurrentMeterReadingDayxrLabel3.Text = "XX";
+            this.CurrentMeterReadingDayxrLabel3.TextAlignment = DevExpress.XtraPrinting.TextAlignment.MiddleCenter;
+            // 
+            // xrLabel39
+            // 
+            this.xrLabel39.Font = new System.Drawing.Font("標楷體", 10F);
+            this.xrLabel39.LocationFloat = new DevExpress.Utils.PointFloat(632.7456F, 115.9108F);
+            this.xrLabel39.Multiline = true;
+            this.xrLabel39.Name = "xrLabel39";
+            this.xrLabel39.Padding = new DevExpress.XtraPrinting.PaddingInfo(2, 2, 0, 0, 100F);
+            this.xrLabel39.SizeF = new System.Drawing.SizeF(14F, 31.33F);
+            this.xrLabel39.StylePriority.UseFont = false;
+            this.xrLabel39.StylePriority.UseTextAlignment = false;
+            this.xrLabel39.Text = "日";
+            this.xrLabel39.TextAlignment = DevExpress.XtraPrinting.TextAlignment.MiddleCenter;
+            // 
+            // CurrentMeterReadingDayxrLabel2
+            // 
+            this.CurrentMeterReadingDayxrLabel2.Font = new System.Drawing.Font("標楷體", 10F, System.Drawing.FontStyle.Underline);
+            this.CurrentMeterReadingDayxrLabel2.LocationFloat = new DevExpress.Utils.PointFloat(578.7456F, 115.9074F);
+            this.CurrentMeterReadingDayxrLabel2.Multiline = true;
+            this.CurrentMeterReadingDayxrLabel2.Name = "CurrentMeterReadingDayxrLabel2";
+            this.CurrentMeterReadingDayxrLabel2.Padding = new DevExpress.XtraPrinting.PaddingInfo(2, 2, 0, 0, 100F);
+            this.CurrentMeterReadingDayxrLabel2.SizeF = new System.Drawing.SizeF(20F, 31.33F);
+            this.CurrentMeterReadingDayxrLabel2.StylePriority.UseFont = false;
+            this.CurrentMeterReadingDayxrLabel2.StylePriority.UseTextAlignment = false;
+            this.CurrentMeterReadingDayxrLabel2.Text = "XX";
+            this.CurrentMeterReadingDayxrLabel2.TextAlignment = DevExpress.XtraPrinting.TextAlignment.MiddleCenter;
+            // 
+            // xrLabel33
+            // 
+            this.xrLabel33.Font = new System.Drawing.Font("標楷體", 10F);
+            this.xrLabel33.LocationFloat = new DevExpress.Utils.PointFloat(562.7456F, 115.9074F);
+            this.xrLabel33.Multiline = true;
+            this.xrLabel33.Name = "xrLabel33";
+            this.xrLabel33.Padding = new DevExpress.XtraPrinting.PaddingInfo(2, 2, 0, 0, 100F);
+            this.xrLabel33.SizeF = new System.Drawing.SizeF(16F, 31.33F);
+            this.xrLabel33.StylePriority.UseFont = false;
+            this.xrLabel33.StylePriority.UseTextAlignment = false;
+            this.xrLabel33.Text = "年";
+            this.xrLabel33.TextAlignment = DevExpress.XtraPrinting.TextAlignment.MiddleCenter;
+            // 
+            // xrLabel36
+            // 
+            this.xrLabel36.Font = new System.Drawing.Font("標楷體", 10F);
+            this.xrLabel36.LocationFloat = new DevExpress.Utils.PointFloat(238.6619F, 147.7702F);
+            this.xrLabel36.Multiline = true;
+            this.xrLabel36.Name = "xrLabel36";
+            this.xrLabel36.Padding = new DevExpress.XtraPrinting.PaddingInfo(2, 2, 0, 0, 100F);
+            this.xrLabel36.SizeF = new System.Drawing.SizeF(14F, 31.33F);
+            this.xrLabel36.StylePriority.UseFont = false;
+            this.xrLabel36.StylePriority.UseTextAlignment = false;
+            this.xrLabel36.Text = "日";
+            this.xrLabel36.TextAlignment = DevExpress.XtraPrinting.TextAlignment.MiddleCenter;
+            // 
+            // EndDatexrLabel3
+            // 
+            this.EndDatexrLabel3.Font = new System.Drawing.Font("標楷體", 10F, System.Drawing.FontStyle.Underline);
+            this.EndDatexrLabel3.LocationFloat = new DevExpress.Utils.PointFloat(218.6619F, 147.7702F);
+            this.EndDatexrLabel3.Multiline = true;
+            this.EndDatexrLabel3.Name = "EndDatexrLabel3";
+            this.EndDatexrLabel3.Padding = new DevExpress.XtraPrinting.PaddingInfo(2, 2, 0, 0, 100F);
+            this.EndDatexrLabel3.SizeF = new System.Drawing.SizeF(20F, 31.33F);
+            this.EndDatexrLabel3.StylePriority.UseFont = false;
+            this.EndDatexrLabel3.StylePriority.UseTextAlignment = false;
+            this.EndDatexrLabel3.Text = "XX";
+            this.EndDatexrLabel3.TextAlignment = DevExpress.XtraPrinting.TextAlignment.MiddleCenter;
+            // 
+            // xrLabel34
+            // 
+            this.xrLabel34.Font = new System.Drawing.Font("標楷體", 10F);
+            this.xrLabel34.LocationFloat = new DevExpress.Utils.PointFloat(204.6619F, 147.7702F);
+            this.xrLabel34.Multiline = true;
+            this.xrLabel34.Name = "xrLabel34";
+            this.xrLabel34.Padding = new DevExpress.XtraPrinting.PaddingInfo(2, 2, 0, 0, 100F);
+            this.xrLabel34.SizeF = new System.Drawing.SizeF(14F, 31.33F);
+            this.xrLabel34.StylePriority.UseFont = false;
+            this.xrLabel34.StylePriority.UseTextAlignment = false;
+            this.xrLabel34.Text = "月";
+            this.xrLabel34.TextAlignment = DevExpress.XtraPrinting.TextAlignment.MiddleCenter;
+            // 
+            // EndDatexrLabel2
+            // 
+            this.EndDatexrLabel2.Font = new System.Drawing.Font("標楷體", 10F, System.Drawing.FontStyle.Underline);
+            this.EndDatexrLabel2.LocationFloat = new DevExpress.Utils.PointFloat(184.6619F, 147.7702F);
+            this.EndDatexrLabel2.Multiline = true;
+            this.EndDatexrLabel2.Name = "EndDatexrLabel2";
+            this.EndDatexrLabel2.Padding = new DevExpress.XtraPrinting.PaddingInfo(2, 2, 0, 0, 100F);
+            this.EndDatexrLabel2.SizeF = new System.Drawing.SizeF(20F, 31.33F);
+            this.EndDatexrLabel2.StylePriority.UseFont = false;
+            this.EndDatexrLabel2.StylePriority.UseTextAlignment = false;
+            this.EndDatexrLabel2.Text = "XX";
+            this.EndDatexrLabel2.TextAlignment = DevExpress.XtraPrinting.TextAlignment.MiddleCenter;
+            // 
+            // xrLabel32
+            // 
+            this.xrLabel32.Font = new System.Drawing.Font("標楷體", 10F);
+            this.xrLabel32.LocationFloat = new DevExpress.Utils.PointFloat(166.7039F, 147.7702F);
+            this.xrLabel32.Multiline = true;
+            this.xrLabel32.Name = "xrLabel32";
+            this.xrLabel32.Padding = new DevExpress.XtraPrinting.PaddingInfo(2, 2, 0, 0, 100F);
+            this.xrLabel32.SizeF = new System.Drawing.SizeF(16F, 31.33F);
+            this.xrLabel32.StylePriority.UseFont = false;
+            this.xrLabel32.StylePriority.UseTextAlignment = false;
+            this.xrLabel32.Text = "年";
+            this.xrLabel32.TextAlignment = DevExpress.XtraPrinting.TextAlignment.MiddleCenter;
+            // 
+            // StartDatexrLabel3
+            // 
+            this.StartDatexrLabel3.Font = new System.Drawing.Font("標楷體", 10F, System.Drawing.FontStyle.Underline);
+            this.StartDatexrLabel3.LocationFloat = new DevExpress.Utils.PointFloat(218.6619F, 115.9074F);
+            this.StartDatexrLabel3.Multiline = true;
+            this.StartDatexrLabel3.Name = "StartDatexrLabel3";
+            this.StartDatexrLabel3.Padding = new DevExpress.XtraPrinting.PaddingInfo(2, 2, 0, 0, 100F);
+            this.StartDatexrLabel3.SizeF = new System.Drawing.SizeF(20F, 31.33F);
+            this.StartDatexrLabel3.StylePriority.UseFont = false;
+            this.StartDatexrLabel3.StylePriority.UseTextAlignment = false;
+            this.StartDatexrLabel3.Text = "XX";
+            this.StartDatexrLabel3.TextAlignment = DevExpress.XtraPrinting.TextAlignment.MiddleCenter;
+            // 
+            // StartDatexrLabel2
+            // 
+            this.StartDatexrLabel2.Font = new System.Drawing.Font("標楷體", 10F, System.Drawing.FontStyle.Underline);
+            this.StartDatexrLabel2.LocationFloat = new DevExpress.Utils.PointFloat(184.6619F, 115.9075F);
+            this.StartDatexrLabel2.Multiline = true;
+            this.StartDatexrLabel2.Name = "StartDatexrLabel2";
+            this.StartDatexrLabel2.Padding = new DevExpress.XtraPrinting.PaddingInfo(2, 2, 0, 0, 100F);
+            this.StartDatexrLabel2.SizeF = new System.Drawing.SizeF(20F, 31.33F);
+            this.StartDatexrLabel2.StylePriority.UseFont = false;
+            this.StartDatexrLabel2.StylePriority.UseTextAlignment = false;
+            this.StartDatexrLabel2.Text = "XX";
+            this.StartDatexrLabel2.TextAlignment = DevExpress.XtraPrinting.TextAlignment.MiddleCenter;
+            // 
+            // xrLabel31
+            // 
+            this.xrLabel31.Font = new System.Drawing.Font("標楷體", 10F);
+            this.xrLabel31.LocationFloat = new DevExpress.Utils.PointFloat(238.6619F, 115.9074F);
+            this.xrLabel31.Multiline = true;
+            this.xrLabel31.Name = "xrLabel31";
+            this.xrLabel31.Padding = new DevExpress.XtraPrinting.PaddingInfo(2, 2, 0, 0, 100F);
+            this.xrLabel31.SizeF = new System.Drawing.SizeF(14F, 31.33F);
+            this.xrLabel31.StylePriority.UseFont = false;
+            this.xrLabel31.StylePriority.UseTextAlignment = false;
+            this.xrLabel31.Text = "日";
+            this.xrLabel31.TextAlignment = DevExpress.XtraPrinting.TextAlignment.MiddleCenter;
+            // 
+            // xrLabel30
+            // 
+            this.xrLabel30.Font = new System.Drawing.Font("標楷體", 10F);
+            this.xrLabel30.LocationFloat = new DevExpress.Utils.PointFloat(204.6619F, 115.9074F);
+            this.xrLabel30.Multiline = true;
+            this.xrLabel30.Name = "xrLabel30";
+            this.xrLabel30.Padding = new DevExpress.XtraPrinting.PaddingInfo(2, 2, 0, 0, 100F);
+            this.xrLabel30.SizeF = new System.Drawing.SizeF(14F, 31.33F);
+            this.xrLabel30.StylePriority.UseFont = false;
+            this.xrLabel30.StylePriority.UseTextAlignment = false;
+            this.xrLabel30.Text = "月";
+            this.xrLabel30.TextAlignment = DevExpress.XtraPrinting.TextAlignment.MiddleCenter;
+            // 
+            // xrLabel29
+            // 
+            this.xrLabel29.Font = new System.Drawing.Font("標楷體", 10F);
+            this.xrLabel29.LocationFloat = new DevExpress.Utils.PointFloat(166.7039F, 115.9074F);
+            this.xrLabel29.Multiline = true;
+            this.xrLabel29.Name = "xrLabel29";
+            this.xrLabel29.Padding = new DevExpress.XtraPrinting.PaddingInfo(2, 2, 0, 0, 100F);
+            this.xrLabel29.SizeF = new System.Drawing.SizeF(16F, 31.33F);
+            this.xrLabel29.StylePriority.UseFont = false;
+            this.xrLabel29.StylePriority.UseTextAlignment = false;
+            this.xrLabel29.Text = "年";
+            this.xrLabel29.TextAlignment = DevExpress.XtraPrinting.TextAlignment.MiddleCenter;
             // 
             // xrTable1
             // 
@@ -663,15 +923,19 @@ namespace MICReportSystem.Views
             // 
             // xrTableCell52
             // 
+            this.xrTableCell52.Font = new System.Drawing.Font("標楷體", 10F);
             this.xrTableCell52.Multiline = true;
             this.xrTableCell52.Name = "xrTableCell52";
+            this.xrTableCell52.StylePriority.UseFont = false;
             this.xrTableCell52.Text = "-";
             this.xrTableCell52.Weight = 1.1164272601945766D;
             // 
             // xrTableCell53
             // 
+            this.xrTableCell53.Font = new System.Drawing.Font("標楷體", 10F);
             this.xrTableCell53.Multiline = true;
             this.xrTableCell53.Name = "xrTableCell53";
+            this.xrTableCell53.StylePriority.UseFont = false;
             this.xrTableCell53.Text = "-";
             this.xrTableCell53.Weight = 1.1164281119612771D;
             // 
@@ -1156,266 +1420,6 @@ namespace MICReportSystem.Views
             this.xrLabel28.StylePriority.UseTextAlignment = false;
             this.xrLabel28.Text = "附\r\n表\r\n１\r\n  \r\n發\r\n電\r\n設\r\n備\r\n發\r\n電\r\n產\r\n量\r\n紀\r\n錄\r\n表\r\n";
             this.xrLabel28.TextAlignment = DevExpress.XtraPrinting.TextAlignment.MiddleCenter;
-            // 
-            // xrLabel29
-            // 
-            this.xrLabel29.Font = new System.Drawing.Font("標楷體", 10F);
-            this.xrLabel29.LocationFloat = new DevExpress.Utils.PointFloat(166.7039F, 115.9074F);
-            this.xrLabel29.Multiline = true;
-            this.xrLabel29.Name = "xrLabel29";
-            this.xrLabel29.Padding = new DevExpress.XtraPrinting.PaddingInfo(2, 2, 0, 0, 100F);
-            this.xrLabel29.SizeF = new System.Drawing.SizeF(16F, 31.33F);
-            this.xrLabel29.StylePriority.UseFont = false;
-            this.xrLabel29.StylePriority.UseTextAlignment = false;
-            this.xrLabel29.Text = "年";
-            this.xrLabel29.TextAlignment = DevExpress.XtraPrinting.TextAlignment.MiddleCenter;
-            // 
-            // xrLabel30
-            // 
-            this.xrLabel30.Font = new System.Drawing.Font("標楷體", 10F);
-            this.xrLabel30.LocationFloat = new DevExpress.Utils.PointFloat(204.6619F, 115.9074F);
-            this.xrLabel30.Multiline = true;
-            this.xrLabel30.Name = "xrLabel30";
-            this.xrLabel30.Padding = new DevExpress.XtraPrinting.PaddingInfo(2, 2, 0, 0, 100F);
-            this.xrLabel30.SizeF = new System.Drawing.SizeF(14F, 31.33F);
-            this.xrLabel30.StylePriority.UseFont = false;
-            this.xrLabel30.StylePriority.UseTextAlignment = false;
-            this.xrLabel30.Text = "月";
-            this.xrLabel30.TextAlignment = DevExpress.XtraPrinting.TextAlignment.MiddleCenter;
-            // 
-            // xrLabel31
-            // 
-            this.xrLabel31.Font = new System.Drawing.Font("標楷體", 10F);
-            this.xrLabel31.LocationFloat = new DevExpress.Utils.PointFloat(238.6619F, 115.9074F);
-            this.xrLabel31.Multiline = true;
-            this.xrLabel31.Name = "xrLabel31";
-            this.xrLabel31.Padding = new DevExpress.XtraPrinting.PaddingInfo(2, 2, 0, 0, 100F);
-            this.xrLabel31.SizeF = new System.Drawing.SizeF(14F, 31.33F);
-            this.xrLabel31.StylePriority.UseFont = false;
-            this.xrLabel31.StylePriority.UseTextAlignment = false;
-            this.xrLabel31.Text = "日";
-            this.xrLabel31.TextAlignment = DevExpress.XtraPrinting.TextAlignment.MiddleCenter;
-            // 
-            // StartDatexrLabel2
-            // 
-            this.StartDatexrLabel2.Font = new System.Drawing.Font("標楷體", 10F, System.Drawing.FontStyle.Underline);
-            this.StartDatexrLabel2.LocationFloat = new DevExpress.Utils.PointFloat(184.6619F, 115.9075F);
-            this.StartDatexrLabel2.Multiline = true;
-            this.StartDatexrLabel2.Name = "StartDatexrLabel2";
-            this.StartDatexrLabel2.Padding = new DevExpress.XtraPrinting.PaddingInfo(2, 2, 0, 0, 100F);
-            this.StartDatexrLabel2.SizeF = new System.Drawing.SizeF(20F, 31.33F);
-            this.StartDatexrLabel2.StylePriority.UseFont = false;
-            this.StartDatexrLabel2.StylePriority.UseTextAlignment = false;
-            this.StartDatexrLabel2.Text = "XX";
-            this.StartDatexrLabel2.TextAlignment = DevExpress.XtraPrinting.TextAlignment.MiddleCenter;
-            // 
-            // StartDatexrLabel3
-            // 
-            this.StartDatexrLabel3.Font = new System.Drawing.Font("標楷體", 10F, System.Drawing.FontStyle.Underline);
-            this.StartDatexrLabel3.LocationFloat = new DevExpress.Utils.PointFloat(218.6619F, 115.9074F);
-            this.StartDatexrLabel3.Multiline = true;
-            this.StartDatexrLabel3.Name = "StartDatexrLabel3";
-            this.StartDatexrLabel3.Padding = new DevExpress.XtraPrinting.PaddingInfo(2, 2, 0, 0, 100F);
-            this.StartDatexrLabel3.SizeF = new System.Drawing.SizeF(20F, 31.33F);
-            this.StartDatexrLabel3.StylePriority.UseFont = false;
-            this.StartDatexrLabel3.StylePriority.UseTextAlignment = false;
-            this.StartDatexrLabel3.Text = "XX";
-            this.StartDatexrLabel3.TextAlignment = DevExpress.XtraPrinting.TextAlignment.MiddleCenter;
-            // 
-            // xrLabel32
-            // 
-            this.xrLabel32.Font = new System.Drawing.Font("標楷體", 10F);
-            this.xrLabel32.LocationFloat = new DevExpress.Utils.PointFloat(166.7039F, 147.7702F);
-            this.xrLabel32.Multiline = true;
-            this.xrLabel32.Name = "xrLabel32";
-            this.xrLabel32.Padding = new DevExpress.XtraPrinting.PaddingInfo(2, 2, 0, 0, 100F);
-            this.xrLabel32.SizeF = new System.Drawing.SizeF(16F, 31.33F);
-            this.xrLabel32.StylePriority.UseFont = false;
-            this.xrLabel32.StylePriority.UseTextAlignment = false;
-            this.xrLabel32.Text = "年";
-            this.xrLabel32.TextAlignment = DevExpress.XtraPrinting.TextAlignment.MiddleCenter;
-            // 
-            // EndDatexrLabel2
-            // 
-            this.EndDatexrLabel2.Font = new System.Drawing.Font("標楷體", 10F, System.Drawing.FontStyle.Underline);
-            this.EndDatexrLabel2.LocationFloat = new DevExpress.Utils.PointFloat(184.6619F, 147.7702F);
-            this.EndDatexrLabel2.Multiline = true;
-            this.EndDatexrLabel2.Name = "EndDatexrLabel2";
-            this.EndDatexrLabel2.Padding = new DevExpress.XtraPrinting.PaddingInfo(2, 2, 0, 0, 100F);
-            this.EndDatexrLabel2.SizeF = new System.Drawing.SizeF(20F, 31.33F);
-            this.EndDatexrLabel2.StylePriority.UseFont = false;
-            this.EndDatexrLabel2.StylePriority.UseTextAlignment = false;
-            this.EndDatexrLabel2.Text = "XX";
-            this.EndDatexrLabel2.TextAlignment = DevExpress.XtraPrinting.TextAlignment.MiddleCenter;
-            // 
-            // xrLabel34
-            // 
-            this.xrLabel34.Font = new System.Drawing.Font("標楷體", 10F);
-            this.xrLabel34.LocationFloat = new DevExpress.Utils.PointFloat(204.6619F, 147.7702F);
-            this.xrLabel34.Multiline = true;
-            this.xrLabel34.Name = "xrLabel34";
-            this.xrLabel34.Padding = new DevExpress.XtraPrinting.PaddingInfo(2, 2, 0, 0, 100F);
-            this.xrLabel34.SizeF = new System.Drawing.SizeF(14F, 31.33F);
-            this.xrLabel34.StylePriority.UseFont = false;
-            this.xrLabel34.StylePriority.UseTextAlignment = false;
-            this.xrLabel34.Text = "月";
-            this.xrLabel34.TextAlignment = DevExpress.XtraPrinting.TextAlignment.MiddleCenter;
-            // 
-            // EndDatexrLabel3
-            // 
-            this.EndDatexrLabel3.Font = new System.Drawing.Font("標楷體", 10F, System.Drawing.FontStyle.Underline);
-            this.EndDatexrLabel3.LocationFloat = new DevExpress.Utils.PointFloat(218.6619F, 147.7702F);
-            this.EndDatexrLabel3.Multiline = true;
-            this.EndDatexrLabel3.Name = "EndDatexrLabel3";
-            this.EndDatexrLabel3.Padding = new DevExpress.XtraPrinting.PaddingInfo(2, 2, 0, 0, 100F);
-            this.EndDatexrLabel3.SizeF = new System.Drawing.SizeF(20F, 31.33F);
-            this.EndDatexrLabel3.StylePriority.UseFont = false;
-            this.EndDatexrLabel3.StylePriority.UseTextAlignment = false;
-            this.EndDatexrLabel3.Text = "XX";
-            this.EndDatexrLabel3.TextAlignment = DevExpress.XtraPrinting.TextAlignment.MiddleCenter;
-            // 
-            // xrLabel36
-            // 
-            this.xrLabel36.Font = new System.Drawing.Font("標楷體", 10F);
-            this.xrLabel36.LocationFloat = new DevExpress.Utils.PointFloat(238.6619F, 147.7702F);
-            this.xrLabel36.Multiline = true;
-            this.xrLabel36.Name = "xrLabel36";
-            this.xrLabel36.Padding = new DevExpress.XtraPrinting.PaddingInfo(2, 2, 0, 0, 100F);
-            this.xrLabel36.SizeF = new System.Drawing.SizeF(14F, 31.33F);
-            this.xrLabel36.StylePriority.UseFont = false;
-            this.xrLabel36.StylePriority.UseTextAlignment = false;
-            this.xrLabel36.Text = "日";
-            this.xrLabel36.TextAlignment = DevExpress.XtraPrinting.TextAlignment.MiddleCenter;
-            // 
-            // xrLabel33
-            // 
-            this.xrLabel33.Font = new System.Drawing.Font("標楷體", 10F);
-            this.xrLabel33.LocationFloat = new DevExpress.Utils.PointFloat(562.7456F, 115.9074F);
-            this.xrLabel33.Multiline = true;
-            this.xrLabel33.Name = "xrLabel33";
-            this.xrLabel33.Padding = new DevExpress.XtraPrinting.PaddingInfo(2, 2, 0, 0, 100F);
-            this.xrLabel33.SizeF = new System.Drawing.SizeF(16F, 31.33F);
-            this.xrLabel33.StylePriority.UseFont = false;
-            this.xrLabel33.StylePriority.UseTextAlignment = false;
-            this.xrLabel33.Text = "年";
-            this.xrLabel33.TextAlignment = DevExpress.XtraPrinting.TextAlignment.MiddleCenter;
-            // 
-            // CurrentMeterReadingDayxrLabel2
-            // 
-            this.CurrentMeterReadingDayxrLabel2.Font = new System.Drawing.Font("標楷體", 10F, System.Drawing.FontStyle.Underline);
-            this.CurrentMeterReadingDayxrLabel2.LocationFloat = new DevExpress.Utils.PointFloat(578.7456F, 115.9074F);
-            this.CurrentMeterReadingDayxrLabel2.Multiline = true;
-            this.CurrentMeterReadingDayxrLabel2.Name = "CurrentMeterReadingDayxrLabel2";
-            this.CurrentMeterReadingDayxrLabel2.Padding = new DevExpress.XtraPrinting.PaddingInfo(2, 2, 0, 0, 100F);
-            this.CurrentMeterReadingDayxrLabel2.SizeF = new System.Drawing.SizeF(20F, 31.33F);
-            this.CurrentMeterReadingDayxrLabel2.StylePriority.UseFont = false;
-            this.CurrentMeterReadingDayxrLabel2.StylePriority.UseTextAlignment = false;
-            this.CurrentMeterReadingDayxrLabel2.Text = "XX";
-            this.CurrentMeterReadingDayxrLabel2.TextAlignment = DevExpress.XtraPrinting.TextAlignment.MiddleCenter;
-            // 
-            // xrLabel37
-            // 
-            this.xrLabel37.Font = new System.Drawing.Font("標楷體", 10F);
-            this.xrLabel37.LocationFloat = new DevExpress.Utils.PointFloat(598.7456F, 115.9108F);
-            this.xrLabel37.Multiline = true;
-            this.xrLabel37.Name = "xrLabel37";
-            this.xrLabel37.Padding = new DevExpress.XtraPrinting.PaddingInfo(2, 2, 0, 0, 100F);
-            this.xrLabel37.SizeF = new System.Drawing.SizeF(14F, 31.33F);
-            this.xrLabel37.StylePriority.UseFont = false;
-            this.xrLabel37.StylePriority.UseTextAlignment = false;
-            this.xrLabel37.Text = "月";
-            this.xrLabel37.TextAlignment = DevExpress.XtraPrinting.TextAlignment.MiddleCenter;
-            // 
-            // CurrentMeterReadingDayxrLabel3
-            // 
-            this.CurrentMeterReadingDayxrLabel3.Font = new System.Drawing.Font("標楷體", 10F, System.Drawing.FontStyle.Underline);
-            this.CurrentMeterReadingDayxrLabel3.LocationFloat = new DevExpress.Utils.PointFloat(612.7456F, 115.9108F);
-            this.CurrentMeterReadingDayxrLabel3.Multiline = true;
-            this.CurrentMeterReadingDayxrLabel3.Name = "CurrentMeterReadingDayxrLabel3";
-            this.CurrentMeterReadingDayxrLabel3.Padding = new DevExpress.XtraPrinting.PaddingInfo(2, 2, 0, 0, 100F);
-            this.CurrentMeterReadingDayxrLabel3.SizeF = new System.Drawing.SizeF(20F, 31.33F);
-            this.CurrentMeterReadingDayxrLabel3.StylePriority.UseFont = false;
-            this.CurrentMeterReadingDayxrLabel3.StylePriority.UseTextAlignment = false;
-            this.CurrentMeterReadingDayxrLabel3.Text = "XX";
-            this.CurrentMeterReadingDayxrLabel3.TextAlignment = DevExpress.XtraPrinting.TextAlignment.MiddleCenter;
-            // 
-            // xrLabel39
-            // 
-            this.xrLabel39.Font = new System.Drawing.Font("標楷體", 10F);
-            this.xrLabel39.LocationFloat = new DevExpress.Utils.PointFloat(632.7456F, 115.9108F);
-            this.xrLabel39.Multiline = true;
-            this.xrLabel39.Name = "xrLabel39";
-            this.xrLabel39.Padding = new DevExpress.XtraPrinting.PaddingInfo(2, 2, 0, 0, 100F);
-            this.xrLabel39.SizeF = new System.Drawing.SizeF(14F, 31.33F);
-            this.xrLabel39.StylePriority.UseFont = false;
-            this.xrLabel39.StylePriority.UseTextAlignment = false;
-            this.xrLabel39.Text = "日";
-            this.xrLabel39.TextAlignment = DevExpress.XtraPrinting.TextAlignment.MiddleCenter;
-            // 
-            // xrLabel35
-            // 
-            this.xrLabel35.Font = new System.Drawing.Font("標楷體", 10F);
-            this.xrLabel35.LocationFloat = new DevExpress.Utils.PointFloat(562.7456F, 147.2425F);
-            this.xrLabel35.Multiline = true;
-            this.xrLabel35.Name = "xrLabel35";
-            this.xrLabel35.Padding = new DevExpress.XtraPrinting.PaddingInfo(2, 2, 0, 0, 100F);
-            this.xrLabel35.SizeF = new System.Drawing.SizeF(16F, 31.33F);
-            this.xrLabel35.StylePriority.UseFont = false;
-            this.xrLabel35.StylePriority.UseTextAlignment = false;
-            this.xrLabel35.Text = "年";
-            this.xrLabel35.TextAlignment = DevExpress.XtraPrinting.TextAlignment.MiddleCenter;
-            // 
-            // DateOfReportingxrLabel2
-            // 
-            this.DateOfReportingxrLabel2.Font = new System.Drawing.Font("標楷體", 10F, System.Drawing.FontStyle.Underline);
-            this.DateOfReportingxrLabel2.LocationFloat = new DevExpress.Utils.PointFloat(578.7456F, 147.2425F);
-            this.DateOfReportingxrLabel2.Multiline = true;
-            this.DateOfReportingxrLabel2.Name = "DateOfReportingxrLabel2";
-            this.DateOfReportingxrLabel2.Padding = new DevExpress.XtraPrinting.PaddingInfo(2, 2, 0, 0, 100F);
-            this.DateOfReportingxrLabel2.SizeF = new System.Drawing.SizeF(20F, 31.33F);
-            this.DateOfReportingxrLabel2.StylePriority.UseFont = false;
-            this.DateOfReportingxrLabel2.StylePriority.UseTextAlignment = false;
-            this.DateOfReportingxrLabel2.Text = "XX";
-            this.DateOfReportingxrLabel2.TextAlignment = DevExpress.XtraPrinting.TextAlignment.MiddleCenter;
-            // 
-            // xrLabel40
-            // 
-            this.xrLabel40.Font = new System.Drawing.Font("標楷體", 10F);
-            this.xrLabel40.LocationFloat = new DevExpress.Utils.PointFloat(598.7456F, 147.2425F);
-            this.xrLabel40.Multiline = true;
-            this.xrLabel40.Name = "xrLabel40";
-            this.xrLabel40.Padding = new DevExpress.XtraPrinting.PaddingInfo(2, 2, 0, 0, 100F);
-            this.xrLabel40.SizeF = new System.Drawing.SizeF(14F, 31.33F);
-            this.xrLabel40.StylePriority.UseFont = false;
-            this.xrLabel40.StylePriority.UseTextAlignment = false;
-            this.xrLabel40.Text = "月";
-            this.xrLabel40.TextAlignment = DevExpress.XtraPrinting.TextAlignment.MiddleCenter;
-            // 
-            // DateOfReportingxrLabel3
-            // 
-            this.DateOfReportingxrLabel3.Font = new System.Drawing.Font("標楷體", 10F, System.Drawing.FontStyle.Underline);
-            this.DateOfReportingxrLabel3.LocationFloat = new DevExpress.Utils.PointFloat(612.7456F, 147.2425F);
-            this.DateOfReportingxrLabel3.Multiline = true;
-            this.DateOfReportingxrLabel3.Name = "DateOfReportingxrLabel3";
-            this.DateOfReportingxrLabel3.Padding = new DevExpress.XtraPrinting.PaddingInfo(2, 2, 0, 0, 100F);
-            this.DateOfReportingxrLabel3.SizeF = new System.Drawing.SizeF(20F, 31.33F);
-            this.DateOfReportingxrLabel3.StylePriority.UseFont = false;
-            this.DateOfReportingxrLabel3.StylePriority.UseTextAlignment = false;
-            this.DateOfReportingxrLabel3.Text = "XX";
-            this.DateOfReportingxrLabel3.TextAlignment = DevExpress.XtraPrinting.TextAlignment.MiddleCenter;
-            // 
-            // xrLabel42
-            // 
-            this.xrLabel42.Font = new System.Drawing.Font("標楷體", 10F);
-            this.xrLabel42.LocationFloat = new DevExpress.Utils.PointFloat(632.7456F, 147.2425F);
-            this.xrLabel42.Multiline = true;
-            this.xrLabel42.Name = "xrLabel42";
-            this.xrLabel42.Padding = new DevExpress.XtraPrinting.PaddingInfo(2, 2, 0, 0, 100F);
-            this.xrLabel42.SizeF = new System.Drawing.SizeF(14F, 31.33F);
-            this.xrLabel42.StylePriority.UseFont = false;
-            this.xrLabel42.StylePriority.UseTextAlignment = false;
-            this.xrLabel42.Text = "日";
-            this.xrLabel42.TextAlignment = DevExpress.XtraPrinting.TextAlignment.MiddleCenter;
             // 
             // AnalysisXtraReport
             // 

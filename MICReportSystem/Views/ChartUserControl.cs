@@ -212,6 +212,7 @@ namespace MICReportSystem.Views
                             case ElectricSearchTypeEnum.kWh:
                                 {
                                     Series series1 = new Series($"{ElectricConfig.DeviceName} - 累積電量", viewType: ViewType.Bar);
+                                    series1.DataSource = ElectricTotaldata;
                                     series1.CrosshairLabelPattern = "{S}" + "\n" + "時間:{A:yyyy-MM-dd} " + "\n" + "數值:{V:0.00}kWh";
                                     series1.LegendTextPattern = "{A}";
                                     series1.ArgumentDataMember = "ttimen";
@@ -240,7 +241,7 @@ namespace MICReportSystem.Views
                     case ElectricSearchTypeEnum.kWh:
                         {
                             gridControl1.DataSource = ElectricTotals;
-                            LinechartControl.DataSource = ElectricTotals;
+                            //LinechartControl.DataSource = ElectricTotals;
                         }
                         break;
                 }

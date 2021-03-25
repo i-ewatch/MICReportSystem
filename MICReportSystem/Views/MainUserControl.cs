@@ -88,14 +88,18 @@ namespace MICReportSystem.Views
         }
         public override void TextChange()
         {
-            Month_ElectricTotal();
-            int Index = 0;
-            foreach (var ElectricConfigitem in ElectricConfigs)
+            TimeSpan BartimeSpan = DateTime.Now.Subtract(TTime);
+            if (BartimeSpan.TotalMilliseconds >= 60000)
             {
-                MonthchartControl.Series[Index].DataSource = ElectricTotals.Where(g => g.GatewayIndex == ElectricConfigitem.GatewayIndex & g.DeviceIndex == ElectricConfigitem.DeviceIndex).ToList();
-                Index++;
-            }
-            MonthchartControl.Refresh();
+                Month_ElectricTotal();
+                int Index = 0;
+                foreach (var ElectricConfigitem in ElectricConfigs)
+                {
+                    MonthchartControl.Series[Index].DataSource = ElectricTotals.Where(g => g.GatewayIndex == ElectricConfigitem.GatewayIndex & g.DeviceIndex == ElectricConfigitem.DeviceIndex).ToList();
+                    Index++;
+                }
+                MonthchartControl.Refresh();
+            }         
             foreach (var item in Field4UserControls)
             {
                 item.TextChange();
@@ -151,7 +155,7 @@ namespace MICReportSystem.Views
                                 ElectricTotals.Add(electricTotal);
                             }
                         }
-                       
+
                     }
                 }
             }

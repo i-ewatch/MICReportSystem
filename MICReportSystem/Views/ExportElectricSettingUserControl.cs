@@ -18,9 +18,9 @@ namespace MICReportSystem.Views
             OfficialPricingStartDatetimeEdit.EditValue = ReportConfig.OfficialPricingStartDate.ToString("yyyy/MM/dd");
             PricStartTimetimeEdit.EditValue = ReportConfig.PricStartTime.ToString("yyyy/MM/dd");
             PricEndTimetimeEdit.EditValue = ReportConfig.PricEndTime.ToString("yyyy/MM/dd");
-            ElectricityPurchaseRatetextEdit.Text = ReportConfig.ElectricityPurchaseRate.ToString("F4");
-            DeviceCapacitytextEdit.Text = ReportConfig.DeviceCapacity.ToString("F3");
-            PurchaseAndSaleCapacitytextEdit.Text = ReportConfig.PurchaseAndSaleCapacity.ToString("F3");
+            ElectricityPurchaseRatetextEdit.Text = ReportConfig.ElectricityPurchaseRate.ToString("#.####");
+            DeviceCapacitytextEdit.Text = ReportConfig.DeviceCapacity.ToString("#.###");
+            PurchaseAndSaleCapacitytextEdit.Text = ReportConfig.PurchaseAndSaleCapacity.ToString("#.###");
             RatetextEdit.Text = ReportConfig.Ratio.ToString();
         }
         public ReportConfig ReportConfig { get; set; }

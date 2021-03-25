@@ -97,10 +97,10 @@ namespace MICReportSystem.Views
                 xrTableCell17.Text = $"{TaiwanDate.GetYear(ReportConfigs[0].StartingDate)}.{ReportConfigs[0].StartingDate.Month}.{ReportConfigs[0].StartingDate.Day}";//計價起始日
                 xrTableCell22.Text = $"{TaiwanDate.GetYear(ReportConfigs[0].OfficialPricingStartDate)}.{ReportConfigs[0].OfficialPricingStartDate.Month}.{ReportConfigs[0].OfficialPricingStartDate.Day}";//正是購售電能日
                 xrTableCell52.Text = $"{TaiwanDate.GetYear(ReportConfigs[0].PricStartTime)}.{ReportConfigs[0].PricStartTime.Month}.{ReportConfigs[0].PricStartTime.Day}-{TaiwanDate.GetYear(ReportConfigs[0].PricEndTime)}.{ReportConfigs[0].PricEndTime.Month}.{ReportConfigs[0].PricEndTime.Day}";//計價起迄期間
-                xrTableCell27.Text = ReportConfigs[0].ElectricityPurchaseRate.ToString("F4");//購電費率
-                xrTableCell32.Text = ReportConfigs[0].DeviceCapacity.ToString();//裝置容量
-                xrTableCell37.Text = ReportConfigs[0].PurchaseAndSaleCapacity.ToString();//購售電容量
-                xrTableCell42.Text = TotalkWh[0].ToString();//生產電度量
+                xrTableCell27.Text = ReportConfigs[0].ElectricityPurchaseRate.ToString("#.####");//購電費率
+                xrTableCell32.Text = ReportConfigs[0].DeviceCapacity.ToString("#.###");//裝置容量
+                xrTableCell37.Text = ReportConfigs[0].PurchaseAndSaleCapacity.ToString("#.###");//購售電容量
+                xrTableCell42.Text = TotalkWh[0].ToString("#.##");//生產電度量
                 if (TotalkWh[0] != 0)
                 {
                     xrTableCell47.Text = $"{Convert.ToInt32((TotalkWh[0] / SumTotalkWh) * 100)}%";
@@ -113,10 +113,10 @@ namespace MICReportSystem.Views
                 xrTableCell18.Text = $"{TaiwanDate.GetYear(ReportConfigs[1].StartingDate)}.{ReportConfigs[1].StartingDate.Month}.{ReportConfigs[1].StartingDate.Day}";//計價起始日
                 xrTableCell23.Text = $"{TaiwanDate.GetYear(ReportConfigs[1].OfficialPricingStartDate)}.{ReportConfigs[1].OfficialPricingStartDate.Month}.{ReportConfigs[1].OfficialPricingStartDate.Day}";//正是購售電能日
                 xrTableCell53.Text = $"{TaiwanDate.GetYear(ReportConfigs[1].PricStartTime)}.{ReportConfigs[1].PricStartTime.Month}.{ReportConfigs[1].PricStartTime.Day}-{TaiwanDate.GetYear(ReportConfigs[1].PricEndTime)}.{ReportConfigs[1].PricEndTime.Month}.{ReportConfigs[1].PricEndTime.Day}";//計價起迄期間
-                xrTableCell28.Text = ReportConfigs[1].ElectricityPurchaseRate.ToString("F4");//購電費率
-                xrTableCell33.Text = ReportConfigs[1].DeviceCapacity.ToString();//裝置容量
-                xrTableCell38.Text = ReportConfigs[1].PurchaseAndSaleCapacity.ToString();//購售電容量
-                xrTableCell43.Text = TotalkWh[1].ToString();//生產電度量
+                xrTableCell28.Text = ReportConfigs[1].ElectricityPurchaseRate.ToString("#.####");//購電費率
+                xrTableCell33.Text = ReportConfigs[1].DeviceCapacity.ToString("#.###");//裝置容量
+                xrTableCell38.Text = ReportConfigs[1].PurchaseAndSaleCapacity.ToString("#.###");//購售電容量
+                xrTableCell43.Text = TotalkWh[1].ToString("#.##");//生產電度量
                 if (TotalkWh[1] != 0)
                 {
                     xrTableCell48.Text = $"{Convert.ToInt32((TotalkWh[1] / SumTotalkWh) * 100)}%";
@@ -124,9 +124,9 @@ namespace MICReportSystem.Views
                 #endregion
 
                 #region 合計
-                xrTableCell35.Text = $"{ReportConfigs[0].DeviceCapacity + ReportConfigs[1].DeviceCapacity}";//裝置容量
-                xrTableCell40.Text = $"{ ReportConfigs[0].PurchaseAndSaleCapacity + ReportConfigs[1].PurchaseAndSaleCapacity}";//購售電容量
-                xrTableCell45.Text = $"{SumTotalkWh}";
+                xrTableCell35.Text = $"{(ReportConfigs[0].DeviceCapacity + ReportConfigs[1].DeviceCapacity).ToString("#.###")}";//裝置容量
+                xrTableCell40.Text = $"{ (ReportConfigs[0].PurchaseAndSaleCapacity + ReportConfigs[1].PurchaseAndSaleCapacity).ToString("#.###")}";//購售電容量
+                xrTableCell45.Text = $"{SumTotalkWh.ToString("#.##")}";
                 #endregion
             }
         }
