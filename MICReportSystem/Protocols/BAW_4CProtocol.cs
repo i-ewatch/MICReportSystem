@@ -30,7 +30,7 @@ namespace MICReportSystem.Protocols
                 _ = Convert.ToDecimal(data[Index] * 0.01); Index++;//P1
                 _ = Convert.ToDecimal(data[Index] * 0.01); Index++;//P2
                 _ = Convert.ToDecimal(data[Index] * 0.01); Index++;//P3
-                kw = Convert.ToDecimal(data[Index] * 0.01); Index++;
+                kw = Convert.ToDecimal(data[Index] * 0.01*(ReportConfig.Ratio)); Index++;
                 _ = Convert.ToDecimal(data[Index] * 0.01); Index++;//Q1
                 _ = Convert.ToDecimal(data[Index] * 0.01); Index++;//Q2
                 _ = Convert.ToDecimal(data[Index] * 0.01); Index++;//Q3
@@ -44,7 +44,7 @@ namespace MICReportSystem.Protocols
                 _ = Convert.ToDecimal(data[Index] * 0.001); Index++;//PFE3
                 pfe = Convert.ToDecimal(data[Index] * 0.001);
                 Index = 0;
-                kwh = Convert.ToDecimal(MathClass.work16to10(KWH[Index], KWH[Index + 1]) * 0.01);
+                kwh = Convert.ToDecimal(MathClass.work16to10(KWH[Index], KWH[Index + 1]) * 0.01 * (ReportConfig.Ratio));
                 kvarh = Convert.ToDecimal(MathClass.work16to10(KVARH[Index], KVARH[Index + 1]) * 0.01);
                 ConnectFlag = true;
                 InsertSql();

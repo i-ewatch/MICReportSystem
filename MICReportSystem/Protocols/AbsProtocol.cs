@@ -1,5 +1,6 @@
 ﻿using MathLibrary;
 using MICReportSystem.Methods;
+using MICReportSystem.Mysql_Module;
 using NModbus;
 
 namespace MICReportSystem.Protocols
@@ -14,6 +15,10 @@ namespace MICReportSystem.Protocols
         /// Mysql方法
         /// </summary>
         public MysqlMethod MysqlMethod { get; set; }
+        /// <summary>
+        /// 月報表資訊
+        /// </summary>
+        public ReportConfig ReportConfig { get; set; }
         /// <summary>
         /// 連線旗標
         /// </summary>

@@ -141,9 +141,13 @@ namespace MICReportSystem.Components
                         master = ModbusFactoryExtensions.CreateRtuMaster(Factory, RS485);//建立RTU通訊
                         master.Transport.ReadTimeout = 500;
                         master.Transport.Retries = 1;
+                        int Index = 0;
+                        var ReportConfigs = MysqlMethod.Search_ReportConfig();
                         foreach (var item in ElectricAbsProtocols)
                         {
+                            item.ReportConfig = ReportConfigs[Index];
                             item.ReadData(master);
+                            Index++;
                             Thread.Sleep(10);
                         }
                     }

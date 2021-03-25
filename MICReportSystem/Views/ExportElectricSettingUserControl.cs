@@ -21,6 +21,7 @@ namespace MICReportSystem.Views
             ElectricityPurchaseRatetextEdit.Text = ReportConfig.ElectricityPurchaseRate.ToString("F4");
             DeviceCapacitytextEdit.Text = ReportConfig.DeviceCapacity.ToString("F3");
             PurchaseAndSaleCapacitytextEdit.Text = ReportConfig.PurchaseAndSaleCapacity.ToString("F3");
+            RatetextEdit.Text = ReportConfig.Ratio.ToString();
         }
         public ReportConfig ReportConfig { get; set; }
         public MysqlMethod MysqlMethod { get; set; }
@@ -36,7 +37,9 @@ namespace MICReportSystem.Views
             ReportConfig.ElectricityPurchaseRate = Convert.ToDecimal(ElectricityPurchaseRatetextEdit.Text);
             ReportConfig.DeviceCapacity = Convert.ToDecimal(DeviceCapacitytextEdit.Text);
             ReportConfig.PurchaseAndSaleCapacity = Convert.ToDecimal(PurchaseAndSaleCapacitytextEdit.Text);
+            ReportConfig.Ratio = Convert.ToInt32(RatetextEdit.Text);
             MysqlMethod.Update_ReportConfig(ReportConfig);
+
         }
     }
 }

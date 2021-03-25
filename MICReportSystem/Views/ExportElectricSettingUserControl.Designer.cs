@@ -51,6 +51,8 @@ namespace MICReportSystem.Views
             this.labelControl2 = new DevExpress.XtraEditors.LabelControl();
             this.labelControl1 = new DevExpress.XtraEditors.LabelControl();
             this.imageCollection1 = new DevExpress.Utils.ImageCollection(this.components);
+            this.labelControl10 = new DevExpress.XtraEditors.LabelControl();
+            this.RatetextEdit = new DevExpress.XtraEditors.TextEdit();
             ((System.ComponentModel.ISupportInitialize)(this.groupControl1)).BeginInit();
             this.groupControl1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.PurchaseAndSaleCapacitytextEdit.Properties)).BeginInit();
@@ -63,10 +65,13 @@ namespace MICReportSystem.Views
             ((System.ComponentModel.ISupportInitialize)(this.ElectricitySalePeriodtextEdit.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.ElectricNotextEdit.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.imageCollection1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.RatetextEdit.Properties)).BeginInit();
             this.SuspendLayout();
             // 
             // groupControl1
             // 
+            this.groupControl1.Controls.Add(this.RatetextEdit);
+            this.groupControl1.Controls.Add(this.labelControl10);
             this.groupControl1.Controls.Add(this.PurchaseAndSaleCapacitytextEdit);
             this.groupControl1.Controls.Add(this.DeviceCapacitytextEdit);
             this.groupControl1.Controls.Add(this.ElectricityPurchaseRatetextEdit);
@@ -88,7 +93,7 @@ namespace MICReportSystem.Views
             this.groupControl1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.groupControl1.Location = new System.Drawing.Point(0, 0);
             this.groupControl1.Name = "groupControl1";
-            this.groupControl1.Size = new System.Drawing.Size(400, 335);
+            this.groupControl1.Size = new System.Drawing.Size(400, 372);
             this.groupControl1.TabIndex = 0;
             this.groupControl1.Text = "groupControl1";
             // 
@@ -336,13 +341,39 @@ namespace MICReportSystem.Views
             this.imageCollection1.ImageStream = ((DevExpress.Utils.ImageCollectionStreamer)(resources.GetObject("imageCollection1.ImageStream")));
             this.imageCollection1.Images.SetKeyName(0, "calendar");
             // 
+            // labelControl10
+            // 
+            this.labelControl10.Appearance.Font = new System.Drawing.Font("Tahoma", 12F);
+            this.labelControl10.Appearance.Options.UseFont = true;
+            this.labelControl10.Location = new System.Drawing.Point(85, 339);
+            this.labelControl10.Name = "labelControl10";
+            this.labelControl10.Size = new System.Drawing.Size(32, 19);
+            this.labelControl10.TabIndex = 18;
+            this.labelControl10.Text = "比值";
+            // 
+            // RatetextEdit
+            // 
+            this.RatetextEdit.Location = new System.Drawing.Point(136, 336);
+            this.RatetextEdit.Name = "RatetextEdit";
+            this.RatetextEdit.Properties.Appearance.Font = new System.Drawing.Font("Tahoma", 12F);
+            this.RatetextEdit.Properties.Appearance.Options.UseFont = true;
+            this.RatetextEdit.Properties.Appearance.Options.UseTextOptions = true;
+            this.RatetextEdit.Properties.Appearance.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
+            this.RatetextEdit.Properties.AppearanceFocused.Options.UseTextOptions = true;
+            this.RatetextEdit.Properties.AppearanceFocused.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
+            this.RatetextEdit.Properties.Mask.EditMask = "[0-9]*.[0-9]*";
+            this.RatetextEdit.Properties.Mask.MaskType = DevExpress.XtraEditors.Mask.MaskType.RegEx;
+            this.RatetextEdit.Properties.Mask.UseMaskAsDisplayFormat = true;
+            this.RatetextEdit.Size = new System.Drawing.Size(105, 26);
+            this.RatetextEdit.TabIndex = 19;
+            // 
             // ExportElectricSettingUserControl
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 14F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.Controls.Add(this.groupControl1);
             this.Name = "ExportElectricSettingUserControl";
-            this.Size = new System.Drawing.Size(400, 335);
+            this.Size = new System.Drawing.Size(400, 372);
             ((System.ComponentModel.ISupportInitialize)(this.groupControl1)).EndInit();
             this.groupControl1.ResumeLayout(false);
             this.groupControl1.PerformLayout();
@@ -356,6 +387,7 @@ namespace MICReportSystem.Views
             ((System.ComponentModel.ISupportInitialize)(this.ElectricitySalePeriodtextEdit.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.ElectricNotextEdit.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.imageCollection1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.RatetextEdit.Properties)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -382,5 +414,7 @@ namespace MICReportSystem.Views
         private DevExpress.XtraEditors.LabelControl labelControl2;
         private DevExpress.XtraEditors.LabelControl labelControl1;
         private DevExpress.Utils.ImageCollection imageCollection1;
+        private DevExpress.XtraEditors.TextEdit RatetextEdit;
+        private DevExpress.XtraEditors.LabelControl labelControl10;
     }
 }
