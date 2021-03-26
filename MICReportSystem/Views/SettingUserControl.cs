@@ -1,5 +1,7 @@
-﻿using MICReportSystem.Methods;
+﻿using MICReportSystem.Configuration;
+using MICReportSystem.Methods;
 using MICReportSystem.Mysql_Module;
+using Newtonsoft.Json;
 using System;
 using System.Collections.Generic;
 using System.Data;
@@ -12,7 +14,11 @@ namespace MICReportSystem.Views
 {
     public partial class SettingUserControl : Field4UserControl
     {
-        public SettingUserControl(MysqlMethod mysql,Form1 form1)
+        /// <summary>
+        /// 工作路徑
+        /// </summary>
+        private readonly string WorkPath = AppDomain.CurrentDomain.BaseDirectory;
+        public SettingUserControl(MysqlMethod mysql, Form1 form1)
         {
             InitializeComponent();
             XtraReportSetting = InitialMethod.InitialXtraReportLoad();
@@ -27,11 +33,13 @@ namespace MICReportSystem.Views
                     ElectricConfigs.Add(Configitem);
                 }
             }
+            ReportTitleSetting reportTitle = InitialMethod.InitialReportTitle();
             ReportConfigs = MysqlMethod.Search_ReportConfig();
-
+            ContractNoTextEdit.Text = reportTitle.ContractNo;
+            ElectNoTextEdit.Text = reportTitle.ElectNo;
             AutotoggleSwitch.IsOn = XtraReportSetting.AutoExport;//自動匯出開關
             PathtextEdit.Text = XtraReportSetting.Path;//儲存路徑
-            DaycomboBoxEdit.Text = XtraReportSetting.Day.ToString() ;//匯出時間
+            DaycomboBoxEdit.Text = XtraReportSetting.Day.ToString();//匯出時間
 
             int Index = 0;
             foreach (var ReportConfigitem in ReportConfigs)
@@ -42,6 +50,7 @@ namespace MICReportSystem.Views
                 exportElectricSettingUserControls.Add(control);
                 Index++;
             }
+
         }
         /// <summary>
         /// 主畫面繼承
@@ -66,6 +75,16 @@ namespace MICReportSystem.Views
 
         private void OKsimpleButton_Click(object sender, EventArgs e)
         {
+            if (!Directory.Exists($"{WorkPath}\\stf"))
+                Directory.CreateDirectory($"{WorkPath}\\stf");
+            string SettingPath = $"{WorkPath}\\stf\\reporttitle.json";
+            ReportTitleSetting setting = new ReportTitleSetting()
+            {
+                ContractNo = ContractNoTextEdit.Text,
+                ElectNo = ElectNoTextEdit.Text
+            };
+            string output = JsonConvert.SerializeObject(setting, Formatting.Indented, new JsonSerializerSettings());
+            File.WriteAllText(SettingPath, output);
             XtraReportSetting.AutoExport = AutotoggleSwitch.IsOn;
             XtraReportSetting.Path = PathtextEdit.Text;
             XtraReportSetting.Day = Convert.ToInt32(DaycomboBoxEdit.Text);
@@ -73,7 +92,7 @@ namespace MICReportSystem.Views
             foreach (var item in exportElectricSettingUserControls)
             {
                 item.Inserter_ReportConfig();
-            }          
+            }
             Form1.accordionControl1.Enabled = true;
             Form1.FlyoutFlag = false;
             Form1.flyout.Close();

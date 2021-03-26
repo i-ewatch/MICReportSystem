@@ -30,8 +30,12 @@ namespace MICReportSystem.Views
         private void InitializeComponent()
         {
             this.groupControl1 = new DevExpress.XtraEditors.GroupControl();
-            this.DaycomboBoxEdit = new DevExpress.XtraEditors.ComboBoxEdit();
             this.ReportviewpanelControl = new DevExpress.XtraEditors.PanelControl();
+            this.labelControl5 = new DevExpress.XtraEditors.LabelControl();
+            this.ElectNoTextEdit = new DevExpress.XtraEditors.TextEdit();
+            this.labelControl4 = new DevExpress.XtraEditors.LabelControl();
+            this.ContractNoTextEdit = new DevExpress.XtraEditors.TextEdit();
+            this.DaycomboBoxEdit = new DevExpress.XtraEditors.ComboBoxEdit();
             this.panelControl1 = new DevExpress.XtraEditors.PanelControl();
             this.CancelsimpleButton = new DevExpress.XtraEditors.SimpleButton();
             this.OKsimpleButton = new DevExpress.XtraEditors.SimpleButton();
@@ -43,8 +47,10 @@ namespace MICReportSystem.Views
             this.labelControl1 = new DevExpress.XtraEditors.LabelControl();
             ((System.ComponentModel.ISupportInitialize)(this.groupControl1)).BeginInit();
             this.groupControl1.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.DaycomboBoxEdit.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.ReportviewpanelControl)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.ElectNoTextEdit.Properties)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.ContractNoTextEdit.Properties)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.DaycomboBoxEdit.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.panelControl1)).BeginInit();
             this.panelControl1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.PathtextEdit.Properties)).BeginInit();
@@ -55,8 +61,12 @@ namespace MICReportSystem.Views
             // 
             this.groupControl1.AppearanceCaption.Font = new System.Drawing.Font("Tahoma", 12F);
             this.groupControl1.AppearanceCaption.Options.UseFont = true;
-            this.groupControl1.Controls.Add(this.DaycomboBoxEdit);
             this.groupControl1.Controls.Add(this.ReportviewpanelControl);
+            this.groupControl1.Controls.Add(this.labelControl5);
+            this.groupControl1.Controls.Add(this.ElectNoTextEdit);
+            this.groupControl1.Controls.Add(this.labelControl4);
+            this.groupControl1.Controls.Add(this.ContractNoTextEdit);
+            this.groupControl1.Controls.Add(this.DaycomboBoxEdit);
             this.groupControl1.Controls.Add(this.panelControl1);
             this.groupControl1.Controls.Add(this.labelControl3);
             this.groupControl1.Controls.Add(this.PathsimpleButton);
@@ -70,6 +80,53 @@ namespace MICReportSystem.Views
             this.groupControl1.Size = new System.Drawing.Size(850, 572);
             this.groupControl1.TabIndex = 0;
             this.groupControl1.Text = "月報表匯出設定";
+            // 
+            // ReportviewpanelControl
+            // 
+            this.ReportviewpanelControl.BorderStyle = DevExpress.XtraEditors.Controls.BorderStyles.NoBorder;
+            this.ReportviewpanelControl.Dock = System.Windows.Forms.DockStyle.Bottom;
+            this.ReportviewpanelControl.Location = new System.Drawing.Point(2, 162);
+            this.ReportviewpanelControl.Name = "ReportviewpanelControl";
+            this.ReportviewpanelControl.Size = new System.Drawing.Size(846, 370);
+            this.ReportviewpanelControl.TabIndex = 10;
+            // 
+            // labelControl5
+            // 
+            this.labelControl5.Appearance.Font = new System.Drawing.Font("Tahoma", 14F);
+            this.labelControl5.Appearance.Options.UseFont = true;
+            this.labelControl5.Location = new System.Drawing.Point(545, 130);
+            this.labelControl5.Name = "labelControl5";
+            this.labelControl5.Size = new System.Drawing.Size(38, 23);
+            this.labelControl5.TabIndex = 16;
+            this.labelControl5.Text = "電號";
+            // 
+            // ElectNoTextEdit
+            // 
+            this.ElectNoTextEdit.Location = new System.Drawing.Point(589, 128);
+            this.ElectNoTextEdit.Name = "ElectNoTextEdit";
+            this.ElectNoTextEdit.Properties.Appearance.Font = new System.Drawing.Font("Tahoma", 12F);
+            this.ElectNoTextEdit.Properties.Appearance.Options.UseFont = true;
+            this.ElectNoTextEdit.Size = new System.Drawing.Size(195, 26);
+            this.ElectNoTextEdit.TabIndex = 15;
+            // 
+            // labelControl4
+            // 
+            this.labelControl4.Appearance.Font = new System.Drawing.Font("Tahoma", 14F);
+            this.labelControl4.Appearance.Options.UseFont = true;
+            this.labelControl4.Location = new System.Drawing.Point(262, 130);
+            this.labelControl4.Name = "labelControl4";
+            this.labelControl4.Size = new System.Drawing.Size(76, 23);
+            this.labelControl4.TabIndex = 14;
+            this.labelControl4.Text = "契約編號";
+            // 
+            // ContractNoTextEdit
+            // 
+            this.ContractNoTextEdit.Location = new System.Drawing.Point(344, 128);
+            this.ContractNoTextEdit.Name = "ContractNoTextEdit";
+            this.ContractNoTextEdit.Properties.Appearance.Font = new System.Drawing.Font("Tahoma", 12F);
+            this.ContractNoTextEdit.Properties.Appearance.Options.UseFont = true;
+            this.ContractNoTextEdit.Size = new System.Drawing.Size(195, 26);
+            this.ContractNoTextEdit.TabIndex = 13;
             // 
             // DaycomboBoxEdit
             // 
@@ -125,15 +182,6 @@ namespace MICReportSystem.Views
             this.DaycomboBoxEdit.Properties.TextEditStyle = DevExpress.XtraEditors.Controls.TextEditStyles.DisableTextEditor;
             this.DaycomboBoxEdit.Size = new System.Drawing.Size(74, 26);
             this.DaycomboBoxEdit.TabIndex = 11;
-            // 
-            // ReportviewpanelControl
-            // 
-            this.ReportviewpanelControl.BorderStyle = DevExpress.XtraEditors.Controls.BorderStyles.NoBorder;
-            this.ReportviewpanelControl.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.ReportviewpanelControl.Location = new System.Drawing.Point(2, 162);
-            this.ReportviewpanelControl.Name = "ReportviewpanelControl";
-            this.ReportviewpanelControl.Size = new System.Drawing.Size(846, 370);
-            this.ReportviewpanelControl.TabIndex = 10;
             // 
             // panelControl1
             // 
@@ -250,8 +298,10 @@ namespace MICReportSystem.Views
             ((System.ComponentModel.ISupportInitialize)(this.groupControl1)).EndInit();
             this.groupControl1.ResumeLayout(false);
             this.groupControl1.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.DaycomboBoxEdit.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.ReportviewpanelControl)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.ElectNoTextEdit.Properties)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.ContractNoTextEdit.Properties)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.DaycomboBoxEdit.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.panelControl1)).EndInit();
             this.panelControl1.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.PathtextEdit.Properties)).EndInit();
@@ -274,5 +324,9 @@ namespace MICReportSystem.Views
         private DevExpress.XtraEditors.SimpleButton CancelsimpleButton;
         private DevExpress.XtraEditors.SimpleButton OKsimpleButton;
         private DevExpress.XtraEditors.ComboBoxEdit DaycomboBoxEdit;
+        private DevExpress.XtraEditors.LabelControl labelControl5;
+        private DevExpress.XtraEditors.TextEdit ElectNoTextEdit;
+        private DevExpress.XtraEditors.LabelControl labelControl4;
+        private DevExpress.XtraEditors.TextEdit ContractNoTextEdit;
     }
 }

@@ -238,6 +238,7 @@
       <DependentUpon>TCPMasterComponent.cs</DependentUpon>
     </Compile>
     <Compile Include="Configuration\ButtonSetting.cs" />
+    <Compile Include="Configuration\ReportTitleSetting.cs" />
     <Compile Include="Configuration\SystemSetting.cs" />
     <Compile Include="Configuration\XtraReportSetting.cs" />
     <Compile Include="Enums\ButtonTypeEnum.cs" />

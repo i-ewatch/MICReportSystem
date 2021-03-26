@@ -161,5 +161,30 @@ namespace MICReportSystem.Methods
             File.WriteAllText(SettingPath, output);
         }
         #endregion
+
+        public static ReportTitleSetting InitialReportTitle()
+        {
+            if (!Directory.Exists($"{MyWorkPath}\\stf"))
+                Directory.CreateDirectory($"{MyWorkPath}\\stf");
+            string SettingPath = $"{MyWorkPath}\\stf\\reporttitle.json";
+            ReportTitleSetting setting = null;
+            if (File.Exists(SettingPath))
+            {
+                string json = File.ReadAllText(SettingPath, Encoding.UTF8);
+                setting = JsonConvert.DeserializeObject<ReportTitleSetting>(json);
+            }
+            else
+            {
+                ReportTitleSetting Setting = new ReportTitleSetting()
+                {
+                    ContractNo = "",
+                    ElectNo = ""
+                };
+                setting = Setting;
+                string output = JsonConvert.SerializeObject(setting, Formatting.Indented, new JsonSerializerSettings());
+                File.WriteAllText(SettingPath, output);
+            }
+            return setting;
+        }
     }
 }

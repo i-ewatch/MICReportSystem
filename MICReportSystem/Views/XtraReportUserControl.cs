@@ -1,6 +1,7 @@
 ﻿using DevExpress.XtraBars.Docking2010.Customization;
 using DevExpress.XtraBars.Docking2010.Views.WindowsUI;
 using DevExpress.XtraReports.UI;
+using MICReportSystem.Configuration;
 using MICReportSystem.Methods;
 using System;
 using System.IO;
@@ -22,6 +23,7 @@ namespace MICReportSystem.Views
         private void ShearsimpleButton_Click(object sender, EventArgs e)
         {
             XtraReportSetting = InitialMethod.InitialXtraReportLoad();
+            ReportTitleSetting reportTitle = InitialMethod.InitialReportTitle();
             if (StartdateEdit.Text != "")
             {
                 string ttime = string.Empty;
@@ -33,10 +35,9 @@ namespace MICReportSystem.Views
                 {
                     ttime = Convert.ToDateTime(StartdateEdit.EditValue).ToString("yyyy/MM/") + $"0{XtraReportSetting.Day} 00:00:00";
                 }
-
                 XtraReport xtraReport = new XtraReport();
                 AnalysisXtraReport analysisXtraReport = new AnalysisXtraReport();
-                analysisXtraReport.create_XtraReport(MysqlMethod, ttime);
+                analysisXtraReport.create_XtraReport(MysqlMethod, ttime, reportTitle);
                 analysisXtraReport.CreateDocument();
                 xtraReport.Pages.AddRange(analysisXtraReport.Pages);
                 documentViewer1.DocumentSource = xtraReport;
@@ -56,6 +57,7 @@ namespace MICReportSystem.Views
         public override void TextChange()
         {
             XtraReportSetting = InitialMethod.InitialXtraReportLoad();
+            ReportTitleSetting reportTitle = InitialMethod.InitialReportTitle();
             if (XtraReportSetting.AutoExport && DateTime.Now.Day == XtraReportSetting.Day)
             {
                 if (!ExportFlag)
@@ -71,16 +73,16 @@ namespace MICReportSystem.Views
                     }
 
                     AnalysisXtraReport analysisXtraReport = new AnalysisXtraReport();
-                    analysisXtraReport.create_XtraReport(MysqlMethod, ttime);
+                    analysisXtraReport.create_XtraReport(MysqlMethod, ttime, reportTitle);
                     analysisXtraReport.CreateDocument();
                     if (Directory.Exists($"{XtraReportSetting.Path}"))
                     {
-                        string path = XtraReportSetting.Path + $"\\{DateTime.Now.ToString("yyyy-MM")}-產量紀錄表(一、二廠).docx";                     
+                        string path = XtraReportSetting.Path + $"\\{DateTime.Now.ToString("yyyy-MM")}-產量紀錄表(一、二廠).docx";
                         analysisXtraReport.ExportToDocx(path);
                     }
                     ExportFlag = true;
                 }
-            }        
+            }
             else
             {
                 ExportFlag = false;

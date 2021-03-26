@@ -40,9 +40,11 @@ namespace MICReportSystem.Views
         /// 總累積量數值
         /// </summary>
         private List<decimal> TotalkWh { get; set; } = new List<decimal>();
-        public void create_XtraReport(MysqlMethod mysql, string TTime)
+        public void create_XtraReport(MysqlMethod mysql, string TTime, ReportTitleSetting reportTitle)
         {
             MysqlMethod = mysql;
+            ContractNoLabel.Text = reportTitle.ContractNo;          //契約編號
+            ElectNoLabel.Text = reportTitle.ElectNo;                //電號
             var TaiwanDate = new System.Globalization.TaiwanCalendar();//民國轉換
             XtraReportSetting = InitialMethod.InitialXtraReportLoad();
             DateTime dateTime = Convert.ToDateTime(TTime);
@@ -97,10 +99,10 @@ namespace MICReportSystem.Views
                 xrTableCell17.Text = $"{TaiwanDate.GetYear(ReportConfigs[0].StartingDate)}.{ReportConfigs[0].StartingDate.Month}.{ReportConfigs[0].StartingDate.Day}";//計價起始日
                 xrTableCell22.Text = $"{TaiwanDate.GetYear(ReportConfigs[0].OfficialPricingStartDate)}.{ReportConfigs[0].OfficialPricingStartDate.Month}.{ReportConfigs[0].OfficialPricingStartDate.Day}";//正是購售電能日
                 xrTableCell52.Text = $"{TaiwanDate.GetYear(ReportConfigs[0].PricStartTime)}.{ReportConfigs[0].PricStartTime.Month}.{ReportConfigs[0].PricStartTime.Day}-{TaiwanDate.GetYear(ReportConfigs[0].PricEndTime)}.{ReportConfigs[0].PricEndTime.Month}.{ReportConfigs[0].PricEndTime.Day}";//計價起迄期間
-                xrTableCell27.Text = ReportConfigs[0].ElectricityPurchaseRate.ToString("#.####");//購電費率
-                xrTableCell32.Text = ReportConfigs[0].DeviceCapacity.ToString("#.###");//裝置容量
-                xrTableCell37.Text = ReportConfigs[0].PurchaseAndSaleCapacity.ToString("#.###");//購售電容量
-                xrTableCell42.Text = TotalkWh[0].ToString("#.##");//生產電度量
+                xrTableCell27.Text = ReportConfigs[0].ElectricityPurchaseRate.ToString("0.####");//購電費率
+                xrTableCell32.Text = ReportConfigs[0].DeviceCapacity.ToString("0.###");//裝置容量
+                xrTableCell37.Text = ReportConfigs[0].PurchaseAndSaleCapacity.ToString("0.###");//購售電容量
+                xrTableCell42.Text = TotalkWh[0].ToString("0.##");//生產電度量
                 if (TotalkWh[0] != 0)
                 {
                     xrTableCell47.Text = $"{Convert.ToInt32((TotalkWh[0] / SumTotalkWh) * 100)}%";

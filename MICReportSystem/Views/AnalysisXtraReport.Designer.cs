@@ -47,6 +47,8 @@ namespace MICReportSystem.Views
             this.xrLabel26 = new DevExpress.XtraReports.UI.XRLabel();
             this.xrLabel27 = new DevExpress.XtraReports.UI.XRLabel();
             this.Detail = new DevExpress.XtraReports.UI.DetailBand();
+            this.ContractNoLabel = new DevExpress.XtraReports.UI.XRLabel();
+            this.ElectNoLabel = new DevExpress.XtraReports.UI.XRLabel();
             this.xrLabel35 = new DevExpress.XtraReports.UI.XRLabel();
             this.DateOfReportingxrLabel2 = new DevExpress.XtraReports.UI.XRLabel();
             this.xrLabel40 = new DevExpress.XtraReports.UI.XRLabel();
@@ -268,10 +270,10 @@ namespace MICReportSystem.Views
             // xrRichText1
             // 
             this.xrRichText1.Font = new System.Drawing.Font("標楷體", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.xrRichText1.LocationFloat = new DevExpress.Utils.PointFloat(67.12054F, 73.95834F);
+            this.xrRichText1.LocationFloat = new DevExpress.Utils.PointFloat(67.12055F, 73.95834F);
             this.xrRichText1.Name = "xrRichText1";
             this.xrRichText1.SerializableRtfString = resources.GetString("xrRichText1.SerializableRtfString");
-            this.xrRichText1.SizeF = new System.Drawing.SizeF(534.4999F, 23.95834F);
+            this.xrRichText1.SizeF = new System.Drawing.SizeF(569.9164F, 23.95834F);
             this.xrRichText1.StylePriority.UseFont = false;
             // 
             // xrLabel22
@@ -349,6 +351,8 @@ namespace MICReportSystem.Views
             // Detail
             // 
             this.Detail.Controls.AddRange(new DevExpress.XtraReports.UI.XRControl[] {
+            this.ContractNoLabel,
+            this.ElectNoLabel,
             this.xrLabel35,
             this.DateOfReportingxrLabel2,
             this.xrLabel40,
@@ -391,6 +395,32 @@ namespace MICReportSystem.Views
             this.xrLabel28});
             this.Detail.HeightF = 788.4769F;
             this.Detail.Name = "Detail";
+            // 
+            // ContractNoLabel
+            // 
+            this.ContractNoLabel.Font = new System.Drawing.Font("標楷體", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.ContractNoLabel.LocationFloat = new DevExpress.Utils.PointFloat(118.3705F, 53.24073F);
+            this.ContractNoLabel.Multiline = true;
+            this.ContractNoLabel.Name = "ContractNoLabel";
+            this.ContractNoLabel.Padding = new DevExpress.XtraPrinting.PaddingInfo(2, 2, 0, 0, 100F);
+            this.ContractNoLabel.SizeF = new System.Drawing.SizeF(189.5833F, 31.33335F);
+            this.ContractNoLabel.StylePriority.UseFont = false;
+            this.ContractNoLabel.StylePriority.UseTextAlignment = false;
+            this.ContractNoLabel.Text = "ContractNoLabel";
+            this.ContractNoLabel.TextAlignment = DevExpress.XtraPrinting.TextAlignment.MiddleLeft;
+            // 
+            // ElectNoLabel
+            // 
+            this.ElectNoLabel.Font = new System.Drawing.Font("標楷體", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.ElectNoLabel.LocationFloat = new DevExpress.Utils.PointFloat(437.6622F, 53.24073F);
+            this.ElectNoLabel.Multiline = true;
+            this.ElectNoLabel.Name = "ElectNoLabel";
+            this.ElectNoLabel.Padding = new DevExpress.XtraPrinting.PaddingInfo(2, 2, 0, 0, 100F);
+            this.ElectNoLabel.SizeF = new System.Drawing.SizeF(205.9582F, 31.33335F);
+            this.ElectNoLabel.StylePriority.UseFont = false;
+            this.ElectNoLabel.StylePriority.UseTextAlignment = false;
+            this.ElectNoLabel.Text = "ElectNoLabel";
+            this.ElectNoLabel.TextAlignment = DevExpress.XtraPrinting.TextAlignment.MiddleLeft;
             // 
             // xrLabel35
             // 
@@ -1178,14 +1208,14 @@ namespace MICReportSystem.Views
             // xrLabel3
             // 
             this.xrLabel3.Font = new System.Drawing.Font("標楷體", 12F);
-            this.xrLabel3.LocationFloat = new DevExpress.Utils.PointFloat(22.12046F, 53.24073F);
+            this.xrLabel3.LocationFloat = new DevExpress.Utils.PointFloat(22.12048F, 53.24073F);
             this.xrLabel3.Multiline = true;
             this.xrLabel3.Name = "xrLabel3";
             this.xrLabel3.Padding = new DevExpress.XtraPrinting.PaddingInfo(2, 2, 0, 0, 100F);
-            this.xrLabel3.SizeF = new System.Drawing.SizeF(219.1667F, 31.33334F);
+            this.xrLabel3.SizeF = new System.Drawing.SizeF(96.25004F, 31.33334F);
             this.xrLabel3.StylePriority.UseFont = false;
             this.xrLabel3.StylePriority.UseTextAlignment = false;
-            this.xrLabel3.Text = "契約編號 : 10-PV-100-0033";
+            this.xrLabel3.Text = "契約編號 :";
             this.xrLabel3.TextAlignment = DevExpress.XtraPrinting.TextAlignment.MiddleCenter;
             // 
             // xrLabel4
@@ -1195,10 +1225,10 @@ namespace MICReportSystem.Views
             this.xrLabel4.Multiline = true;
             this.xrLabel4.Name = "xrLabel4";
             this.xrLabel4.Padding = new DevExpress.XtraPrinting.PaddingInfo(2, 2, 0, 0, 100F);
-            this.xrLabel4.SizeF = new System.Drawing.SizeF(235.125F, 31.33334F);
+            this.xrLabel4.SizeF = new System.Drawing.SizeF(93.04163F, 31.33334F);
             this.xrLabel4.StylePriority.UseFont = false;
             this.xrLabel4.StylePriority.UseTextAlignment = false;
-            this.xrLabel4.Text = "電   號 : 10-51-2919-94-1";
+            this.xrLabel4.Text = "電   號  :";
             this.xrLabel4.TextAlignment = DevExpress.XtraPrinting.TextAlignment.MiddleCenter;
             // 
             // xrLabel5
@@ -1238,7 +1268,7 @@ namespace MICReportSystem.Views
             this.xrLabel7.StylePriority.UseFont = false;
             this.xrLabel7.StylePriority.UseTextAlignment = false;
             this.xrLabel7.Text = "臺南市善化區大利二路6號";
-            this.xrLabel7.TextAlignment = DevExpress.XtraPrinting.TextAlignment.MiddleCenter;
+            this.xrLabel7.TextAlignment = DevExpress.XtraPrinting.TextAlignment.MiddleLeft;
             // 
             // xrLabel8
             // 
@@ -1413,12 +1443,13 @@ namespace MICReportSystem.Views
             // 
             this.xrLabel28.Font = new System.Drawing.Font("標楷體", 12F);
             this.xrLabel28.LocationFloat = new DevExpress.Utils.PointFloat(649.1205F, 10.00001F);
+            this.xrLabel28.Multiline = true;
             this.xrLabel28.Name = "xrLabel28";
             this.xrLabel28.Padding = new DevExpress.XtraPrinting.PaddingInfo(2, 2, 0, 0, 100F);
-            this.xrLabel28.SizeF = new System.Drawing.SizeF(25.87958F, 320.6852F);
+            this.xrLabel28.SizeF = new System.Drawing.SizeF(32.87958F, 348.2685F);
             this.xrLabel28.StylePriority.UseFont = false;
             this.xrLabel28.StylePriority.UseTextAlignment = false;
-            this.xrLabel28.Text = "附\r\n表\r\n１\r\n  \r\n發\r\n電\r\n設\r\n備\r\n發\r\n電\r\n產\r\n量\r\n紀\r\n錄\r\n表\r\n";
+            this.xrLabel28.Text = "附\r\n表\r\n１\r\n\r\n發\r\n電\r\n設\r\n備\r\n發\r\n電\r\n產\r\n量\r\n紀\r\n錄\r\n表";
             this.xrLabel28.TextAlignment = DevExpress.XtraPrinting.TextAlignment.MiddleCenter;
             // 
             // AnalysisXtraReport
@@ -1564,5 +1595,7 @@ namespace MICReportSystem.Views
         private DevExpress.XtraReports.UI.XRLabel xrLabel40;
         private DevExpress.XtraReports.UI.XRLabel DateOfReportingxrLabel3;
         private DevExpress.XtraReports.UI.XRLabel xrLabel42;
+        private DevExpress.XtraReports.UI.XRLabel ContractNoLabel;
+        private DevExpress.XtraReports.UI.XRLabel ElectNoLabel;
     }
 }

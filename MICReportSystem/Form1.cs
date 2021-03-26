@@ -142,6 +142,7 @@ namespace MICReportSystem
             op.RightFooter = $"載入匯出報表資訊";
             SplashScreenManager.Default.SendCommand(FluentSplashScreenCommand.UpdateOptions, op);
             XtraReportSetting = InitialMethod.InitialXtraReportLoad();
+
             Thread.Sleep(1000);
             #endregion
 
