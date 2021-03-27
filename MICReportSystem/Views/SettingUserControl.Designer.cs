@@ -45,6 +45,8 @@ namespace MICReportSystem.Views
             this.labelControl2 = new DevExpress.XtraEditors.LabelControl();
             this.AutotoggleSwitch = new DevExpress.XtraEditors.ToggleSwitch();
             this.labelControl1 = new DevExpress.XtraEditors.LabelControl();
+            this.labelControl6 = new DevExpress.XtraEditors.LabelControl();
+            this.OutputFormatComboBoxEdit = new DevExpress.XtraEditors.ComboBoxEdit();
             ((System.ComponentModel.ISupportInitialize)(this.groupControl1)).BeginInit();
             this.groupControl1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.ReportviewpanelControl)).BeginInit();
@@ -55,12 +57,15 @@ namespace MICReportSystem.Views
             this.panelControl1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.PathtextEdit.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.AutotoggleSwitch.Properties)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.OutputFormatComboBoxEdit.Properties)).BeginInit();
             this.SuspendLayout();
             // 
             // groupControl1
             // 
             this.groupControl1.AppearanceCaption.Font = new System.Drawing.Font("Tahoma", 12F);
             this.groupControl1.AppearanceCaption.Options.UseFont = true;
+            this.groupControl1.Controls.Add(this.OutputFormatComboBoxEdit);
+            this.groupControl1.Controls.Add(this.labelControl6);
             this.groupControl1.Controls.Add(this.ReportviewpanelControl);
             this.groupControl1.Controls.Add(this.labelControl5);
             this.groupControl1.Controls.Add(this.ElectNoTextEdit);
@@ -288,6 +293,32 @@ namespace MICReportSystem.Views
             this.labelControl1.TabIndex = 0;
             this.labelControl1.Text = "自動匯出";
             // 
+            // labelControl6
+            // 
+            this.labelControl6.Appearance.Font = new System.Drawing.Font("Tahoma", 14F);
+            this.labelControl6.Appearance.Options.UseFont = true;
+            this.labelControl6.Location = new System.Drawing.Point(397, 35);
+            this.labelControl6.Name = "labelControl6";
+            this.labelControl6.Size = new System.Drawing.Size(152, 23);
+            this.labelControl6.TabIndex = 17;
+            this.labelControl6.Text = "自動匯出檔案格式";
+            // 
+            // OutputFormatComboBoxEdit
+            // 
+            this.OutputFormatComboBoxEdit.Location = new System.Drawing.Point(555, 33);
+            this.OutputFormatComboBoxEdit.Name = "OutputFormatComboBoxEdit";
+            this.OutputFormatComboBoxEdit.Properties.Appearance.Font = new System.Drawing.Font("Tahoma", 12F);
+            this.OutputFormatComboBoxEdit.Properties.Appearance.Options.UseFont = true;
+            this.OutputFormatComboBoxEdit.Properties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
+            new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
+            this.OutputFormatComboBoxEdit.Properties.Items.AddRange(new object[] {
+            "PDF",
+            "DOCX",
+            "XLSX"});
+            this.OutputFormatComboBoxEdit.Properties.TextEditStyle = DevExpress.XtraEditors.Controls.TextEditStyles.DisableTextEditor;
+            this.OutputFormatComboBoxEdit.Size = new System.Drawing.Size(153, 26);
+            this.OutputFormatComboBoxEdit.TabIndex = 18;
+            // 
             // SettingUserControl
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 14F);
@@ -306,6 +337,7 @@ namespace MICReportSystem.Views
             this.panelControl1.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.PathtextEdit.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.AutotoggleSwitch.Properties)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.OutputFormatComboBoxEdit.Properties)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -328,5 +360,7 @@ namespace MICReportSystem.Views
         private DevExpress.XtraEditors.TextEdit ElectNoTextEdit;
         private DevExpress.XtraEditors.LabelControl labelControl4;
         private DevExpress.XtraEditors.TextEdit ContractNoTextEdit;
+        private DevExpress.XtraEditors.LabelControl labelControl6;
+        private DevExpress.XtraEditors.ComboBoxEdit OutputFormatComboBoxEdit;
     }
 }

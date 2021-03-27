@@ -1,7 +1,9 @@
 ﻿using DevExpress.XtraBars.Docking2010.Customization;
 using DevExpress.XtraBars.Docking2010.Views.WindowsUI;
+using DevExpress.XtraPrinting;
 using DevExpress.XtraReports.UI;
 using MICReportSystem.Configuration;
+using MICReportSystem.Enums;
 using MICReportSystem.Methods;
 using System;
 using System.IO;
@@ -23,7 +25,7 @@ namespace MICReportSystem.Views
         private void ShearsimpleButton_Click(object sender, EventArgs e)
         {
             XtraReportSetting = InitialMethod.InitialXtraReportLoad();
-            ReportTitleSetting reportTitle = InitialMethod.InitialReportTitle();
+            ReportTitleSetting reportTitle = InitialMethod.InitialReportTitleSetting();
             if (StartdateEdit.Text != "")
             {
                 string ttime = string.Empty;
@@ -57,7 +59,8 @@ namespace MICReportSystem.Views
         public override void TextChange()
         {
             XtraReportSetting = InitialMethod.InitialXtraReportLoad();
-            ReportTitleSetting reportTitle = InitialMethod.InitialReportTitle();
+            ReportTitleSetting reportTitle = InitialMethod.InitialReportTitleSetting();
+            FileFormatSetting fileFormat = InitialMethod.InitialFileFormatSetting();
             if (XtraReportSetting.AutoExport && DateTime.Now.Day == XtraReportSetting.Day)
             {
                 if (!ExportFlag)
@@ -71,14 +74,37 @@ namespace MICReportSystem.Views
                     {
                         ttime = DateTime.Now.ToString("yyyy/MM/") + $"0{XtraReportSetting.Day} 00:00:00";
                     }
-
                     AnalysisXtraReport analysisXtraReport = new AnalysisXtraReport();
                     analysisXtraReport.create_XtraReport(MysqlMethod, ttime, reportTitle);
                     analysisXtraReport.CreateDocument();
                     if (Directory.Exists($"{XtraReportSetting.Path}"))
                     {
-                        string path = XtraReportSetting.Path + $"\\{DateTime.Now.ToString("yyyy-MM")}-產量紀錄表(一、二廠).docx";
-                        analysisXtraReport.ExportToDocx(path);
+                        FileFormatTypeEnum fileFormatType = (FileFormatTypeEnum)fileFormat.FileFormat;
+                        switch (fileFormatType)
+                        {
+                            case FileFormatTypeEnum.PDF:
+                                {
+                                    string path = XtraReportSetting.Path + $"\\{DateTime.Now.ToString("yyyy-MM")}-產量紀錄表(一、二廠).pdf";
+                                    analysisXtraReport.ExportToPdf(path);
+                                    break;
+                                }
+                            case FileFormatTypeEnum.DOCX:
+                                {
+                                    string path = XtraReportSetting.Path + $"\\{DateTime.Now.ToString("yyyy-MM")}-產量紀錄表(一、二廠).docx";
+                                    DocxExportOptions options = new DocxExportOptions()
+                                    {
+                                        TableLayout = true
+                                    };
+                                    analysisXtraReport.ExportToDocx(path, options);
+                                    break;
+                                }
+                            case FileFormatTypeEnum.XLSX:
+                                {
+                                    string path = XtraReportSetting.Path + $"\\{DateTime.Now.ToString("yyyy-MM")}-產量紀錄表(一、二廠).xlsx";
+                                    analysisXtraReport.ExportToXlsx(path);
+                                    break;
+                                }
+                        }
                     }
                     ExportFlag = true;
                 }

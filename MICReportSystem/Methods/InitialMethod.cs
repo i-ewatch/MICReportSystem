@@ -1,4 +1,5 @@
 ﻿using MICReportSystem.Configuration;
+using MICReportSystem.Enums;
 using Newtonsoft.Json;
 using Serilog;
 using System;
@@ -13,7 +14,6 @@ namespace MICReportSystem.Methods
         /// 初始路徑
         /// </summary>
         private static string MyWorkPath { get; set; } = AppDomain.CurrentDomain.BaseDirectory;
-
         #region  MariaDB資訊Json 建檔與讀取
         /// <summary>
         /// MariaDB資訊Json 建檔與讀取
@@ -161,13 +161,16 @@ namespace MICReportSystem.Methods
             File.WriteAllText(SettingPath, output);
         }
         #endregion
-
-        public static ReportTitleSetting InitialReportTitle()
+        /// <summary>
+        /// 報表表頭設定
+        /// </summary>
+        /// <returns></returns>
+        public static ReportTitleSetting InitialReportTitleSetting()
         {
             if (!Directory.Exists($"{MyWorkPath}\\stf"))
                 Directory.CreateDirectory($"{MyWorkPath}\\stf");
             string SettingPath = $"{MyWorkPath}\\stf\\reporttitle.json";
-            ReportTitleSetting setting = null;
+            ReportTitleSetting setting;
             if (File.Exists(SettingPath))
             {
                 string json = File.ReadAllText(SettingPath, Encoding.UTF8);
@@ -181,6 +184,32 @@ namespace MICReportSystem.Methods
                     ElectNo = ""
                 };
                 setting = Setting;
+                string output = JsonConvert.SerializeObject(setting, Formatting.Indented, new JsonSerializerSettings());
+                File.WriteAllText(SettingPath, output);
+            }
+            return setting;
+        }
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <returns></returns>
+        public static FileFormatSetting InitialFileFormatSetting()
+        {
+            if (!Directory.Exists($"{MyWorkPath}\\stf"))
+                Directory.CreateDirectory($"{MyWorkPath}\\stf");
+            string SettingPath = $"{MyWorkPath}\\stf\\format.json";
+            FileFormatSetting setting;
+            if (File.Exists(SettingPath))
+            {
+                string json = File.ReadAllText(SettingPath, Encoding.UTF8);
+                setting = JsonConvert.DeserializeObject<FileFormatSetting>(json);
+            }
+            else
+            {
+                setting = new FileFormatSetting()
+                {
+                    FileFormat = (int)FileFormatTypeEnum.PDF
+                };
                 string output = JsonConvert.SerializeObject(setting, Formatting.Indented, new JsonSerializerSettings());
                 File.WriteAllText(SettingPath, output);
             }

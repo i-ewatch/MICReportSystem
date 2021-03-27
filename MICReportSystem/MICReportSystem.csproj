@@ -238,12 +238,14 @@
       <DependentUpon>TCPMasterComponent.cs</DependentUpon>
     </Compile>
     <Compile Include="Configuration\ButtonSetting.cs" />
+    <Compile Include="Configuration\FileFormatSetting.cs" />
     <Compile Include="Configuration\ReportTitleSetting.cs" />
     <Compile Include="Configuration\SystemSetting.cs" />
     <Compile Include="Configuration\XtraReportSetting.cs" />
     <Compile Include="Enums\ButtonTypeEnum.cs" />
     <Compile Include="Enums\ElectricSearchTypeEnum.cs" />
     <Compile Include="Enums\ElectricTypeEnum.cs" />
+    <Compile Include="Enums\FileFormatTypeEnum.cs" />
     <Compile Include="Enums\GatewayTypeEnum.cs" />
     <Compile Include="Enums\LoopTypeEnum.cs" />
     <Compile Include="Enums\PhaseAngleTypeEnum.cs" />

@@ -33,13 +33,15 @@ namespace MICReportSystem.Views
                     ElectricConfigs.Add(Configitem);
                 }
             }
-            ReportTitleSetting reportTitle = InitialMethod.InitialReportTitle();
             ReportConfigs = MysqlMethod.Search_ReportConfig();
+            ReportTitleSetting reportTitle = InitialMethod.InitialReportTitleSetting();
             ContractNoTextEdit.Text = reportTitle.ContractNo;
             ElectNoTextEdit.Text = reportTitle.ElectNo;
-            AutotoggleSwitch.IsOn = XtraReportSetting.AutoExport;//自動匯出開關
-            PathtextEdit.Text = XtraReportSetting.Path;//儲存路徑
-            DaycomboBoxEdit.Text = XtraReportSetting.Day.ToString();//匯出時間
+            FileFormatSetting fileFormat = InitialMethod.InitialFileFormatSetting();
+            OutputFormatComboBoxEdit.SelectedIndex = fileFormat.FileFormat;
+            AutotoggleSwitch.IsOn = XtraReportSetting.AutoExport;       //自動匯出開關
+            PathtextEdit.Text = XtraReportSetting.Path;                 //儲存路徑
+            DaycomboBoxEdit.Text = XtraReportSetting.Day.ToString();    //匯出時間
 
             int Index = 0;
             foreach (var ReportConfigitem in ReportConfigs)
@@ -50,7 +52,6 @@ namespace MICReportSystem.Views
                 exportElectricSettingUserControls.Add(control);
                 Index++;
             }
-
         }
         /// <summary>
         /// 主畫面繼承
@@ -77,14 +78,19 @@ namespace MICReportSystem.Views
         {
             if (!Directory.Exists($"{WorkPath}\\stf"))
                 Directory.CreateDirectory($"{WorkPath}\\stf");
-            string SettingPath = $"{WorkPath}\\stf\\reporttitle.json";
-            ReportTitleSetting setting = new ReportTitleSetting()
+            string TitleSettingPath = $"{WorkPath}\\stf\\reporttitle.json";
+            ReportTitleSetting TitleSetting = new ReportTitleSetting()
             {
                 ContractNo = ContractNoTextEdit.Text,
                 ElectNo = ElectNoTextEdit.Text
             };
-            string output = JsonConvert.SerializeObject(setting, Formatting.Indented, new JsonSerializerSettings());
-            File.WriteAllText(SettingPath, output);
+            File.WriteAllText(TitleSettingPath, JsonConvert.SerializeObject(TitleSetting, Formatting.Indented, new JsonSerializerSettings()));
+            string FormatSettingPath = $"{WorkPath}\\stf\\format.json";
+            FileFormatSetting FormatSetting = new FileFormatSetting()
+            {
+                FileFormat = OutputFormatComboBoxEdit.SelectedIndex
+            };
+            File.WriteAllText(FormatSettingPath, JsonConvert.SerializeObject(FormatSetting, Formatting.Indented, new JsonSerializerSettings()));
             XtraReportSetting.AutoExport = AutotoggleSwitch.IsOn;
             XtraReportSetting.Path = PathtextEdit.Text;
             XtraReportSetting.Day = Convert.ToInt32(DaycomboBoxEdit.Text);
