@@ -84,13 +84,13 @@ namespace MICReportSystem.Views
                         {
                             case FileFormatTypeEnum.PDF:
                                 {
-                                    string path = XtraReportSetting.Path + $"\\{DateTime.Now.ToString("yyyy-MM")}-產量紀錄表(一、二廠).pdf";
+                                    string path = XtraReportSetting.Path + $"\\Production Report(F1&F2)_{DateTime.Now.ToString("yyyyMMdd")}.pdf";
                                     analysisXtraReport.ExportToPdf(path);
                                     break;
                                 }
                             case FileFormatTypeEnum.DOCX:
                                 {
-                                    string path = XtraReportSetting.Path + $"\\{DateTime.Now.ToString("yyyy-MM")}-產量紀錄表(一、二廠).docx";
+                                    string path = XtraReportSetting.Path + $"\\Production Report(F1&F2)_{DateTime.Now.ToString("yyyyMMdd")}.docx";
                                     DocxExportOptions options = new DocxExportOptions()
                                     {
                                         TableLayout = true
@@ -100,7 +100,7 @@ namespace MICReportSystem.Views
                                 }
                             case FileFormatTypeEnum.XLSX:
                                 {
-                                    string path = XtraReportSetting.Path + $"\\{DateTime.Now.ToString("yyyy-MM")}-產量紀錄表(一、二廠).xlsx";
+                                    string path = XtraReportSetting.Path + $"\\Production Report(F1&F2)_{DateTime.Now.ToString("yyyyMMdd")}.xlsx";
                                     analysisXtraReport.ExportToXlsx(path);
                                     break;
                                 }
