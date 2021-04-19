@@ -6,6 +6,7 @@ using DevExpress.XtraCharts;
 using DevExpress.XtraEditors;
 using DevExpress.XtraEditors.Controls;
 using DevExpress.XtraEditors.Popup;
+using DevExpress.XtraGrid.Views.Base;
 using DevExpress.XtraGrid.Views.Grid.ViewInfo;
 using MICReportSystem.Enums;
 using MICReportSystem.Methods;
@@ -251,6 +252,9 @@ namespace MICReportSystem.Views
                 {
                     gridView1.Columns[i].Visible = false;
                 }
+                gridView1.OptionsBehavior.Editable = false;
+                gridView1.OptionsView.ColumnAutoWidth = false;
+                gridView1.OptionsSelection.EnableAppearanceFocusedCell = false;
                 switch (electricSearchTypeEnum)
                 {
                     case ElectricSearchTypeEnum.Voltage:
@@ -337,19 +341,38 @@ namespace MICReportSystem.Views
                         break;
                 }
                 gridView1.Columns["ttimen"].BestFit();
-                gridView1.Columns["DeviceIndex"].Visible = true;
-                gridView1.Columns["DeviceIndex"].Group();
-                gridView1.CustomDrawGroupRow += (grids, gride) =>
+                gridView1.Columns["GatewayIndex"].Caption = "閘道器";
+                gridView1.Columns["DeviceIndex"].Caption = "設備";
+                gridView1.CustomColumnDisplayText += (s, ex) =>
                 {
-                    GridGroupRowInfo info = gride.Info as GridGroupRowInfo;
-                    for (int i = 0; i < ElectricConfigs.Count; i++)
+                    ColumnView view = s as ColumnView;
+                    if (ex.Column.FieldName == "DeviceIndex" && ex.ListSourceRowIndex != DevExpress.XtraGrid.GridControl.InvalidRowHandle)
                     {
-                        if (ElectricConfigs[i].DeviceIndex.ToString() == info.GroupValueText)
+                        int val = (int)ex.Value;
+                        for (int i = 0; i < ElectricConfigs.Count; i++)
                         {
-                            info.GroupText = ElectricConfigs[i].DeviceName;
+                            int data = (int)view.GetListSourceRowCellValue(ex.ListSourceRowIndex, "GatewayIndex");
+                            if (data == ElectricConfigs[i].GatewayIndex)
+                            {
+                                if (ElectricConfigs[i].DeviceIndex == val)
+                                {
+                                    ex.DisplayText = ElectricConfigs[i].DeviceName;
+                                    break;
+                                }
+                            }
+                        }
+                    }
+                    else if (ex.Column.FieldName == "GatewayIndex" && ex.ListSourceRowIndex != DevExpress.XtraGrid.GridControl.InvalidRowHandle)
+                    {
+                        int val = (int)ex.Value;
+                        for (int i = 0; i < GatewayConfigs.Count; i++)
+                        {
+                            ex.DisplayText = GatewayConfigs[i].GatewayName;
                         }
                     }
                 };
+                gridView1.Columns["GatewayIndex"].Group();
+                gridView1.Columns["DeviceIndex"].Group();
                 #endregion
                 #region 曲線圖
                 LinechartControl.Legend.Direction = LegendDirection.TopToBottom;//曲線圖線條說明的排序

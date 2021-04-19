@@ -188,6 +188,7 @@ namespace MICReportSystem.Views
             DevExpress.Utils.ToolTipItem toolTipItem52 = new DevExpress.Utils.ToolTipItem();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(XtraReportUserControl));
             this.panelControl1 = new DevExpress.XtraEditors.PanelControl();
+            this.TimelabelControl = new DevExpress.XtraEditors.LabelControl();
             this.ShearsimpleButton = new DevExpress.XtraEditors.SimpleButton();
             this.StartdateEdit = new DevExpress.XtraEditors.TimeEdit();
             this.labelControl1 = new DevExpress.XtraEditors.LabelControl();
@@ -275,6 +276,7 @@ namespace MICReportSystem.Views
             // 
             // panelControl1
             // 
+            this.panelControl1.Controls.Add(this.TimelabelControl);
             this.panelControl1.Controls.Add(this.ShearsimpleButton);
             this.panelControl1.Controls.Add(this.StartdateEdit);
             this.panelControl1.Controls.Add(this.labelControl1);
@@ -283,6 +285,20 @@ namespace MICReportSystem.Views
             this.panelControl1.Name = "panelControl1";
             this.panelControl1.Size = new System.Drawing.Size(1716, 40);
             this.panelControl1.TabIndex = 0;
+            // 
+            // TimelabelControl
+            // 
+            this.TimelabelControl.Appearance.Font = new System.Drawing.Font("Tahoma", 20.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.TimelabelControl.Appearance.Options.UseFont = true;
+            this.TimelabelControl.Appearance.Options.UseTextOptions = true;
+            this.TimelabelControl.Appearance.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
+            this.TimelabelControl.AutoSizeMode = DevExpress.XtraEditors.LabelAutoSizeMode.None;
+            this.TimelabelControl.Dock = System.Windows.Forms.DockStyle.Left;
+            this.TimelabelControl.Location = new System.Drawing.Point(425, 2);
+            this.TimelabelControl.Name = "TimelabelControl";
+            this.TimelabelControl.Size = new System.Drawing.Size(609, 36);
+            this.TimelabelControl.TabIndex = 13;
+            this.TimelabelControl.Text = "-";
             // 
             // ShearsimpleButton
             // 
@@ -320,6 +336,7 @@ namespace MICReportSystem.Views
             this.StartdateEdit.Properties.TimeEditStyle = DevExpress.XtraEditors.Repository.TimeEditStyle.TouchUI;
             this.StartdateEdit.Size = new System.Drawing.Size(223, 40);
             this.StartdateEdit.TabIndex = 11;
+            this.StartdateEdit.EditValueChanged += new System.EventHandler(this.StartdateEdit_EditValueChanged);
             // 
             // labelControl1
             // 
@@ -1641,5 +1658,6 @@ namespace MICReportSystem.Views
         private DevExpress.XtraEditors.SimpleButton ShearsimpleButton;
         private DevExpress.XtraEditors.TimeEdit StartdateEdit;
         private DevExpress.Utils.ImageCollection imageCollection1;
+        private DevExpress.XtraEditors.LabelControl TimelabelControl;
     }
 }

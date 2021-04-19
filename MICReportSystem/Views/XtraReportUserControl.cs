@@ -114,5 +114,29 @@ namespace MICReportSystem.Views
                 ExportFlag = false;
             }
         }
+
+        private void StartdateEdit_EditValueChanged(object sender, EventArgs e)
+        {
+            string ttime = string.Empty;
+            if (XtraReportSetting.Day.ToString().Length == 2)
+            {
+                ttime = Convert.ToDateTime(StartdateEdit.EditValue).ToString("yyyy/MM/") + $"{XtraReportSetting.Day} 00:00:00";
+            }
+            else
+            {
+                ttime = Convert.ToDateTime(StartdateEdit.EditValue).ToString("yyyy/MM/") + $"0{XtraReportSetting.Day} 00:00:00";
+            }
+            DateTime dateTime = Convert.ToDateTime(ttime);
+            var TaiwanDate = new System.Globalization.TaiwanCalendar();//民國轉換
+            if (XtraReportSetting.Day.ToString().Length == 2)
+            {
+                TimelabelControl.Text = $"{TaiwanDate.GetYear(dateTime.AddMonths(-1))}年{dateTime.AddMonths(-1).ToString("MM")}月{ XtraReportSetting.Day}日 ";
+            }
+            else
+            {
+                TimelabelControl.Text = $"{TaiwanDate.GetYear(dateTime.AddMonths(-1))}年{dateTime.AddMonths(-1).ToString("MM")}月0{ XtraReportSetting.Day}日 ";
+            }
+            TimelabelControl.Text += $"- {TaiwanDate.GetYear(dateTime.AddDays(-1))}年{dateTime.AddDays(-1).ToString("MM月dd日")}";
+        }
     }
 }
