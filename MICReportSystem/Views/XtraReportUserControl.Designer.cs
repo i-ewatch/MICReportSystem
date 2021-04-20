@@ -264,6 +264,7 @@ namespace MICReportSystem.Views
             this.printPreviewRibbonPageGroup8 = new DevExpress.XtraPrinting.Preview.PrintPreviewRibbonPageGroup();
             this.ribbonStatusBar1 = new DevExpress.XtraBars.Ribbon.RibbonStatusBar();
             this.imageCollection1 = new DevExpress.Utils.ImageCollection(this.components);
+            this.labelControl2 = new DevExpress.XtraEditors.LabelControl();
             ((System.ComponentModel.ISupportInitialize)(this.panelControl1)).BeginInit();
             this.panelControl1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.StartdateEdit.Properties)).BeginInit();
@@ -277,6 +278,7 @@ namespace MICReportSystem.Views
             // panelControl1
             // 
             this.panelControl1.Controls.Add(this.TimelabelControl);
+            this.panelControl1.Controls.Add(this.labelControl2);
             this.panelControl1.Controls.Add(this.ShearsimpleButton);
             this.panelControl1.Controls.Add(this.StartdateEdit);
             this.panelControl1.Controls.Add(this.labelControl1);
@@ -294,9 +296,9 @@ namespace MICReportSystem.Views
             this.TimelabelControl.Appearance.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
             this.TimelabelControl.AutoSizeMode = DevExpress.XtraEditors.LabelAutoSizeMode.None;
             this.TimelabelControl.Dock = System.Windows.Forms.DockStyle.Left;
-            this.TimelabelControl.Location = new System.Drawing.Point(425, 2);
+            this.TimelabelControl.Location = new System.Drawing.Point(569, 2);
             this.TimelabelControl.Name = "TimelabelControl";
-            this.TimelabelControl.Size = new System.Drawing.Size(609, 36);
+            this.TimelabelControl.Size = new System.Drawing.Size(339, 36);
             this.TimelabelControl.TabIndex = 13;
             this.TimelabelControl.Text = "-";
             // 
@@ -1557,6 +1559,20 @@ namespace MICReportSystem.Views
             this.imageCollection1.ImageStream = ((DevExpress.Utils.ImageCollectionStreamer)(resources.GetObject("imageCollection1.ImageStream")));
             this.imageCollection1.Images.SetKeyName(0, "calendar");
             // 
+            // labelControl2
+            // 
+            this.labelControl2.Appearance.Font = new System.Drawing.Font("Tahoma", 20.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.labelControl2.Appearance.Options.UseFont = true;
+            this.labelControl2.Appearance.Options.UseTextOptions = true;
+            this.labelControl2.Appearance.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
+            this.labelControl2.AutoSizeMode = DevExpress.XtraEditors.LabelAutoSizeMode.None;
+            this.labelControl2.Dock = System.Windows.Forms.DockStyle.Left;
+            this.labelControl2.Location = new System.Drawing.Point(425, 2);
+            this.labelControl2.Name = "labelControl2";
+            this.labelControl2.Size = new System.Drawing.Size(144, 36);
+            this.labelControl2.TabIndex = 14;
+            this.labelControl2.Text = "匯出區間：";
+            // 
             // XtraReportUserControl
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 14F);
@@ -1659,5 +1675,6 @@ namespace MICReportSystem.Views
         private DevExpress.XtraEditors.TimeEdit StartdateEdit;
         private DevExpress.Utils.ImageCollection imageCollection1;
         private DevExpress.XtraEditors.LabelControl TimelabelControl;
+        private DevExpress.XtraEditors.LabelControl labelControl2;
     }
 }
