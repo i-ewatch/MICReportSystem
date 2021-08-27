@@ -164,7 +164,7 @@ namespace MICReportSystem.Methods
                     sql = "SELECT * FROM ThreePhaseElectricMeter_Log WHERE ttime >= @StartTime AND ttime <= @EndTime AND GatewayIndex = @GatewayIndex AND DeviceIndex = @DeviceIndex";
                     //sql = "SELECT SUM(KwhTotal) AS KwhTotal FROM ElectricTotal WHERE (ttime >= @StartTime OR ttime <= @EndTime) AND GatewayIndex = @GatewayIndex AND DeviceIndex = @DeviceIndex";
                     //logs = conn.QuerySingle<ElectricTotal>(sql, new { StartTime, EndTime, GatewayIndex, DeviceIndex }).KwhTotal;
-                    var data = conn.Query<ThreePhaseElectricMeter_Log>(sql, new { StartTime, EndTime, GatewayIndex, DeviceIndex }).ToList();
+                    var data = conn.Query<ThreePhaseElectricMeter_Log>(sql, new { StartTime=$"{StartTime}000000", EndTime = $"{EndTime}235959", GatewayIndex, DeviceIndex }).ToList();
                     logs = data[data.Count - 1].kwh - data[0].kwh;
                 }
             }

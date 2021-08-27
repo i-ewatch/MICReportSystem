@@ -98,6 +98,8 @@ namespace MICReportSystem.Views
                 }
                 string starttime = ((DateTime)StartdateEdit.EditValue).ToString("yyyyMMdd000000");//起始時間
                 string endtime = ((DateTime)EnddateEdit.EditValue).ToString("yyyyMMdd235959");//結束時間
+                string Tstarttime = ((DateTime)StartdateEdit.EditValue).ToString("yyyyMMdd");//起始時間
+                string Tendtime = ((DateTime)EnddateEdit.EditValue).ToString("yyyyMMdd");//結束時間
                 List<Series> Lineseries = new List<Series>();//曲線圖用
                 ThreePhaseElectricMeter_Logs = new List<ThreePhaseElectricMeter_Log>(); //報表用
                 ElectricTotals = new List<ElectricTotal>();
@@ -108,7 +110,7 @@ namespace MICReportSystem.Views
                     {
                         ElectricConfig = (ElectricConfig)DeviceCheckedcomboBoxEdit.Properties.Items[i].Tag;
                         var data = MysqlMethod.Search_ThreePhaseElectricMeter_Log(starttime, endtime, ElectricConfig.GatewayIndex, ElectricConfig.DeviceIndex);
-                        var ElectricTotaldata = MysqlMethod.Search_ElectricTotal(starttime, endtime, ElectricConfig.GatewayIndex, ElectricConfig.DeviceIndex);
+                        var ElectricTotaldata = MysqlMethod.Search_ElectricTotal(Tstarttime, Tendtime, ElectricConfig.GatewayIndex, ElectricConfig.DeviceIndex);
                         #region 報表資料整理
                         ThreePhaseElectricMeter_Logs.AddRange(data);
                         ElectricTotals.AddRange(ElectricTotaldata);
